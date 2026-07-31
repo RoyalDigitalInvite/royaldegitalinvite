@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitation Mariage | Sarah & Ismail</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Amiri:wght@400;700&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="intro-active">
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- LOGO FLOTTANT 
+  <div id="floatingLogo" class="floating-logo" aria-hidden="true">
+    <img src="assets/RoyalDigitalInvite.svg" alt="Royal Digital Invite">
+  </div>
+-->
+  <!-- INTRO / HERO -->
+  <section id="scene1" class="intro-screen" aria-label="Ouverture de l’invitation">
+    <div id="introTrigger" class="intro-trigger" role="button" tabindex="0" aria-label="Ouvrir l’invitation">
+      <img src="assets/enveloppe-biege.png" alt="Invitation mariage Sarah et Ismail" class="intro-cover">
+    </div>
+
+    <video id="video1" class="intro-video" playsinline muted preload="auto" poster="assets/design1-end.jpg">
+      <source src="assets/design1.mp4" type="video/mp4">
+    </video>
+
+    <!-- IMAGE FIXE DE FIN -->
+    <img id="videoEndFrame" class="video-end-frame" src="assets/design1-end.jpg" alt="Fin de l’animation">
+  </section>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main id="scene2" class="hidden main-content">
+
+    <!-- COUNTDOWN -->
+    <section id="countdownSection" class="section section-light">
+      <div class="container center narrow">
+        <div class="section-head reveal-up">
+          <p class="section-label">Notre grand jour</p>
+          <h2 class="section-title">Le compte à rebours est lancé</h2>
+          <p class="section-arabic" dir="rtl">موعدنا يقترب بإذن الله</p>
+          <p class="section-text">
+            Chaque jour qui passe nous rapproche de cette célébration remplie d’amour,
+            de joie et de bénédictions.
+          </p>
+        </div>
+
+        <!-- HORAIRE AJOUTÉ -->
+        <div class="event-highlight reveal-up">
+          <div class="event-highlight-icon">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+          <div class="event-highlight-content">
+            <span class="event-highlight-label">Horaire de réception</span>
+            <strong>À partir de 16h00</strong>
+            <p>
+              Nous aurons le plaisir de vous accueillir à partir de 16h00
+              pour débuter ensemble cette belle célébration.
+            </p>
+          </div>
+        </div>
+
+        <div class="countdown">
+          <div class="count-box reveal-up">
+            <span id="days">00</span>
+            <small>Jours</small>
+          </div>
+          <div class="count-box reveal-up">
+            <span id="hours">00</span>
+            <small>Heures</small>
+          </div>
+          <div class="count-box reveal-up">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+          </div>
+          <div class="count-box reveal-up">
+            <span id="seconds">00</span>
+            <small>Secondes</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIEU + GPS -->
+    <section class="section section-dark section-with-banner">
+      <div class="full-banner reveal-zoom">
+        <img src="assets/lieu.jpg" alt="Lieu de la cérémonie" class="section-banner-image">
+      </div>
+
+      <div class="container">
+        <div class="cards-grid">
+          <article class="card card-dark reveal-left">
+            <p class="card-subtitle">
+              <i class="fa-solid fa-location-dot"></i> Adresse
+            </p>
+            <h3>Lieu de la cérémonie</h3>
+            <p class="card-line">
+              <i class="fa-solid fa-building"></i>
+              Palais Tanger, Maroc
+            </p>
+            <p class="card-line">
+              <i class="fa-solid fa-city"></i>
+              Tanger, Maroc
+            </p>
+          </article>
+
+          <article class="card card-dark reveal-right">
+            <p class="card-subtitle">
+              <i class="fa-solid fa-map"></i> Navigation
+            </p>
+            <h3>Google Maps</h3>
+            <p class="card-line">
+              <i class="fa-solid fa-route"></i>
+              Accédez facilement à la localisation de la cérémonie.
+            </p>
+            <a class="text-link" href="https://maps.google.com/?q=Tanger,Maroc" target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              Ouvrir l’itinéraire
+            </a>
+          </article>
+        </div>
+
+        <div class="map-box reveal-up">
+          <iframe src="https://www.google.com/maps?q=Tanger,Maroc&output=embed" width="100%" height="100%"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="section section-light section-with-banner">
+      <div class="full-banner reveal-zoom">
+        <img src="assets/lumiere.png" alt="Ambiance lumière mariage" class="section-banner-image">
+      </div>
+
+      <div class="container">
+        <div class="section-head center reveal-up">
+          <p class="section-label">Dress code</p>
+          <h2 class="section-title">Tenue souhaitée</h2>
+          <p class="section-arabic" dir="rtl">اللباس التقليدي الأنيق</p>
+        </div>
+
+        <div class="cards-grid dress-grid">
+          <article class="card card-light reveal-left">
+            <p class="card-subtitle">
+              <i class="fa-solid fa-crown"></i> Élégance féminine
+            </p>
+            <h3>Pour les femmes</h3>
+            <p class="text-with-icon">
+              <i class="fa-solid fa-gem"></i>
+              <span>Caftan marocain, takchita ou tenue élégante traditionnelle.</span>
+            </p>
+          </article>
+
+          <article class="card card-light reveal-right">
+            <p class="card-subtitle">
+              <i class="fa-solid fa-user-tie"></i> Élégance masculine
+            </p>
+            <h3>Pour les hommes</h3>
+            <p class="text-with-icon">
+              <i class="fa-solid fa-star-and-crescent"></i>
+              <span>Jabador, gandoura élégante ou tenue chic adaptée à la célébration.</span>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container center narrow reveal-up">
+        <div class="footer-divider"></div>
+
+        <h1 class="intro-title">Sarah & Ismail</h1>
+
+        <p class="footer-text">
+          Avec amour, joie et gratitude, nous serons honorés de célébrer ce moment avec vous.
+        </p>
+
+        <p class="footer-arabic" dir="rtl">
+          حضوركم يسعدنا ويزيد فرحتنا
+        </p>
+
+        <!-- DIVIDER AJOUTÉ -->
+        <div class="footer-divider footer-divider-bottom"></div>
+
+        <p class="footer-copyright">
+          © 2026 Royal Digital Invite — Tous droits réservés.
+        </p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
