@@ -202,24 +202,3 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-document.addEventListener("DOMContentLoaded", () => {
-  if (scene2 && !scene2.classList.contains("hidden")) {
-    initRevealAnimations();
-    activateFloatingLogo();
-  }
-});
-
-document.addEventListener("contextmenu", (e) => e.preventDefault());
-document.addEventListener("contextmenu", e => e.preventDefault());
-
-document.addEventListener("keydown", function(e) {
-  if (e.key === "F12") e.preventDefault();
-
-  if (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase())) {
-    e.preventDefault();
-  }
-
-  if (e.ctrlKey && e.key.toUpperCase() === "U") {
-    e.preventDefault();
-  }
-});
