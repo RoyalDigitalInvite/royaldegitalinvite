@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitation Mariage | Imane &amp; Oussama</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="intro-active">
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Arabesques de fond flottantes -->
+  <div class="arabesque-bg" aria-hidden="true">
+    <div class="arabesque-orb orb-1"></div>
+    <div class="arabesque-orb orb-2"></div>
+    <div class="arabesque-orb orb-3"></div>
+    <svg class="pattern-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="zellij" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M30 0 L60 30 L30 60 L0 30 Z" fill="none" stroke="rgba(252,246,219,0.04)" stroke-width="0.8" />
+          <path d="M30 10 L50 30 L30 50 L10 30 Z" fill="none" stroke="rgba(252,246,219,0.03)" stroke-width="0.5" />
+          <circle cx="30" cy="30" r="3" fill="none" stroke="rgba(252,246,219,0.05)" stroke-width="0.5" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#zellij)" />
+    </svg>
+  </div>
+
+
+
+  <button id="musicToggle" class="music-toggle" aria-label="Couper la musique" type="button">
+    <i id="musicIcon" class="fa-solid fa-volume-high"></i>
+  </button>
+
+  <!-- INTRO -->
+  <section id="scene1" class="intro-screen" aria-label="Ouverture de l'invitation">
+    <img id="videoEndFrame" class="video-end-frame" src="assets/image2.png" alt="Décor mariage Imane et Oussama">
+    <div id="introTrigger" class="intro-trigger" role="button" tabindex="0" aria-label="Ouvrir l'invitation">
+      <img src="assets/enveloppe.png" alt="Invitation mariage Imane et Oussama" class="intro-cover">
+    </div>
+  </section>
+
+  <main id="scene2" class="hidden main-content">
+
+    <!-- ══════════════════════════════════ -->
+    <!--  HERO COUNTDOWN                    -->
+    <!-- ══════════════════════════════════ -->
+    <section id="countdownSection" class="section hero-section">
+      <div class="hero-medallion" aria-hidden="true">
+        <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" class="medallion-svg">
+
+          <!-- Moroccan star (6-pointed, Star of Solomon) -->
+          <g transform="translate(160,160)">
+            <polygon points="0,-90 18,-31 80,-26 31,12 50,72 0,38 -50,72 -31,12 -80,-26 -18,-31"
+              fill="rgba(252,246,219,0.03)" stroke="rgba(252,246,219,0.25)" stroke-width="1.5" stroke-linejoin="miter"
+              stroke-miterlimit="10" />
+            <polygon points="0,90 -18,31 -80,26 -31,-12 -50,-72 0,-38 50,-72 31,-12 80,26 18,31"
+              fill="rgba(252,246,219,0.03)" stroke="rgba(252,246,219,0.25)" stroke-width="1.5" stroke-linejoin="miter"
+              stroke-miterlimit="10" />
+          </g>
+
+        </svg>
+      </div>
+
+      <div class="container center narrow">
+
+        <!-- NOUVEAU : Citation en Great Vibes -->
+        <p class="hero-quote reveal-fade">Bienvenue à notre grand jour</p>
+
+        <p class="hero-subtitle reveal-fade">
+          Nous avons le bonheur de vous convier à la célébration de notre mariage
+        </p>
+
+        <div class="event-date-block reveal-fade">
+          <div class="date-pillar">
+            <span class="date-day">Samedi</span>
+            <span class="date-num">26</span>
+            <span class="date-month">Septembre 2026</span>
+          </div>
+          <div class="date-divider-v"></div>
+          <div class="date-pillar">
+            <i class="fa-regular fa-clock date-icon"></i>
+            <span class="date-num">21
+              <small>h00</small></span>
+            <span class="date-month">Réception</span>
+          </div>
+        </div>
+
+        <!-- COUNTDOWN -->
+        <div class="countdown-wrapper reveal-fade">
+          <p class="countdown-label" dir="rtl">موعدنا يقترب بإذن الله</p>
+          <div class="countdown">
+            <div class="count-block">
+              <div class="count-inner">
+                <span id="days">00</span>
+              </div>
+              <small>Jours</small>
+            </div>
+            <div class="count-sep">:</div>
+            <div class="count-block">
+              <div class="count-inner">
+                <span id="hours">00</span>
+              </div>
+              <small>Heures</small>
+            </div>
+            <div class="count-sep">:</div>
+            <div class="count-block">
+              <div class="count-inner">
+                <span id="minutes">00</span>
+              </div>
+              <small>Minutes</small>
+            </div>
+            <div class="count-sep">:</div>
+            <div class="count-block">
+              <div class="count-inner">
+                <span id="seconds">00</span>
+              </div>
+              <small>Secondes</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ -->
+    <!--  LIEU                              -->
+    <!-- ══════════════════════════════════ -->
+
+    <section class="section section-lieu" style="padding-top: 0 !important;">
+
+      <!-- IMAGE EN HAUT, directement au début de la section -->
+      <div class="full-banner reveal-zoom" style="margin-bottom: 0 !important;">
+        <img src="assets/image3.png" alt="Lieu de la cérémonie" class="section-banner-image"
+          style="object-position: center -50px;">
+      </div>
+
+      <div class="container">
+        <div class="section-heading reveal-fade">
+          <div class="ornament-royal">
+            <span></span><i class="fa-solid fa-location-dot"></i><span></span>
+          </div>
+          <!-- NOUVEAU : ligne Great Vibes -->
+          <p class="section-vibes">Un soir inoubliable nous attend</p>
+          <p class="section-khat" dir="rtl">مكان الحفل والموقع</p>
+          <h2 class="section-titre">Lieu &amp; Itinéraire</h2>
+        </div>
+
+        <div class="lieu-grid">
+          <article class="lieu-card reveal-left">
+            <div class="lieu-card-icon"><i class="fa-solid fa-building"></i></div>
+            <h3>Rabat Palace</h3>
+            <p><i class="fa-solid fa-city"></i> Rabat, Maroc</p>
+            <div class="lieu-card-deco"></div>
+          </article>
+
+          <article class="lieu-card reveal-right">
+            <div class="lieu-card-icon"><i class="fa-solid fa-map"></i></div>
+            <h3>Navigation</h3>
+            <p>Accédez facilement à la localisation via Google Maps.</p>
+<a class="btn-royal-outline"
+   href="https://www.google.com/maps?q=RABAT+PALACE,+Parc+industriel+lot+43,+Sal%C3%A9,+Maroc"
+   target="_blank">              rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              Ouvrir l'itinéraire
+            </a>
+            <div class="lieu-card-deco"></div>
+          </article>
+        </div>
+
+        <div class="map-box reveal-fade" style="margin-bottom: 0 !important;">
+       <iframe
+    src="https://www.google.com/maps?q=RABAT+PALACE,+Parc+industriel+lot+43,+Sal%C3%A9,+Maroc&output=embed"
+    width="100%"
+    height="100%"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════ -->
+    <!--  RSVP                              -->
+    <!-- ══════════════════════════════════ -->
+    <section class="section rsvp-section">
+      <div class="section-separator">
+        <div class="sep-line"></div>
+        <div class="sep-center">✦ ✦ ✦</div>
+        <div class="sep-line right"></div>
+      </div>
+      <div class="rsvp-bg-pattern" aria-hidden="true">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="rsvpPat" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M20 0 L40 20 L20 40 L0 20 Z" fill="none" stroke="rgba(252,246,219,0.05)" stroke-width="0.6" />
+              <circle cx="20" cy="20" r="2" fill="rgba(252,246,219,0.04)" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#rsvpPat)" />
+        </svg>
+      </div>
+
+      <div class="container narrow">
+        <div class="section-heading reveal-fade">
+          <div class="ornament-royal">
+            <span></span><i class="fa-solid fa-envelope-open-text"></i><span></span>
+          </div>
+          <!-- NOUVEAU : ligne Great Vibes -->
+          <p class="section-vibes">Votre présence est notre plus beau cadeau</p>
+          <p class="section-khat" dir="rtl">المرجو تأكيد الحضور</p>
+          <h2 class="section-titre">Confirmation de Présence</h2>
+          <p class="section-sous">
+            Votre présence est un précieux cadeau.
+            Merci de confirmer avant le <strong>26 Septembre 2026</strong>.
+          </p>
+        </div>
+
+        <form id="rsvpForm" class="rsvp-form reveal-fade" novalidate>
+
+          <div class="rsvp-field">
+            <label for="rsvpName">
+              <i class="fa-solid fa-user"></i> Nom complet
+            </label>
+            <input type="text" id="rsvpName" name="rsvpName" placeholder="Votre nom et prénom" required
+              autocomplete="name">
+          </div>
+
+          <div class="rsvp-field">
+            <label>
+              <i class="fa-solid fa-circle-check"></i> Votre réponse
+            </label>
+            <div class="rsvp-radio-group">
+              <label class="rsvp-radio">
+                <input type="radio" name="attendance" value="yes" checked>
+                <span>
+                  <i class="fa-solid fa-heart"></i>
+                  <strong>Avec grand plaisir</strong>
+                  <small>Je confirme ma présence.</small>
+                </span>
+              </label>
+              <label class="rsvp-radio">
+                <input type="radio" name="attendance" value="no">
+                <span>
+                  <i class="fa-regular fa-circle-xmark"></i>
+                  <strong>Avec regret</strong>
+                  <small>Je ne pourrai pas être présent(e).</small>
+                </span>
+              </label>
+            </div>
+          </div>
+
+
+
+          <div class="rsvp-field">
+            <label for="rsvpMessage">
+              <i class="fa-solid fa-comment-dots"></i> Message <span class="optional">(optionnel)</span>
+            </label>
+            <textarea id="rsvpMessage" name="rsvpMessage" rows="4"
+              placeholder="Un petit mot pour les mariés..."></textarea>
+          </div>
+
+          <div id="rsvpStatus" class="rsvp-status" aria-live="polite"></div>
+
+          <div class="rsvp-actions">
+            <!-- MODIFIÉ : icône fa-paper-plane au lieu de fa-brands fa-whatsapp -->
+            <button type="submit" class="btn-royal">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Envoyer ma confirmation</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ -->
+    <!--  FOOTER                            -->
+    <!-- ══════════════════════════════════ -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-ornament" aria-hidden="true">
+          <svg viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="15" x2="120" y2="15" stroke="rgba(252,246,219,0.30)" stroke-width="0.8" />
+            <circle cx="150" cy="15" r="6" fill="none" stroke="rgba(252,246,219,0.45)" stroke-width="1" />
+            <circle cx="150" cy="15" r="2" fill="rgba(252,246,219,0.40)" />
+            <line x1="180" y1="15" x2="300" y2="15" stroke="rgba(252,246,219,0.30)" stroke-width="0.8" />
+          </svg>
+        </div>
+
+        <h1 class="footer-names">Imane &amp; Oussama</h1>
+        <p class="footer-arabic" dir="rtl">حضوركم يسعدنا ويزيد فرحتنا</p>
+        <p class="footer-text">Avec amour, joie et gratitude, nous serons honorés de célébrer ce moment avec vous.</p>
+
+        <div class="footer-ornament footer-ornament-bottom" aria-hidden="true">
+          <svg viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="15" x2="120" y2="15" stroke="rgba(252,246,219,0.30)" stroke-width="0.8" />
+            <circle cx="150" cy="15" r="6" fill="none" stroke="rgba(252,246,219,0.45)" stroke-width="1" />
+            <circle cx="150" cy="15" r="2" fill="rgba(252,246,219,0.40)" />
+            <line x1="180" y1="15" x2="300" y2="15" stroke="rgba(252,246,219,0.30)" stroke-width="0.8" />
+          </svg>
+        </div>
+
+        <p class="footer-copy">© 2026 Royal Digital Invite — Tous droits réservés</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
