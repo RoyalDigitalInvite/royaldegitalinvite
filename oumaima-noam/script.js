@@ -7,7 +7,7 @@ const musicIcon = document.getElementById("musicIcon");
 
 
 const WEDDING_CONFIG = {
-  whatsappNumber: "33749929286",
+  whatsappNumber: "212696687166",
 
   brideName: "oumaïma Layouni",
   groomName: "Noam Khedhiri",
