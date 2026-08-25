@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitation de mariage | Sarah & Amine</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Amiri:wght@400;700&family=Great+Vibes&family=Italiana&family=Crimson+Pro:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="intro-active">
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicToggle" class="music-toggle hidden" type="button" aria-label="Couper la musique"
+    title="Couper la musique">
+    <i id="musicIcon" class="fa-solid fa-volume-high"></i>
+  </button>
+
+  <!-- FLOATING LOGO -->
+  <div id="floatingLogo" class="floating-logo" aria-hidden="true">
+    <img src="assets/RoyalDigitalInvite.svg" alt="Royal Digital Invite">
+  </div>
+
+  <!-- INTRO / HERO -->
+  <section id="scene1" class="intro-screen" aria-label="Ouverture de l’invitation">
+
+    <img id="videoEndFrame" class="video-end-frame" src="assets/image2.png"
+      alt="Décoration de mariage pour Sarah et Amine">
+
+    <div id="introTrigger" class="intro-trigger" role="button" tabindex="0" aria-label="Ouvrir l'invitation">
+      <img src="assets/enveloppe.png" alt="Invitation de mariage pour Sarah et Amine" class="intro-cover">
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main id="scene2" class="hidden main-content">
+
+    <!-- COUNTDOWN -->
+    <section id="countdownSection" class="section section-light">
+      <div class="container center narrow">
+
+        <div class="ornament reveal-up">
+          <span class="ornament-line"></span>
+          <i class="fa-solid fa-heart"></i>
+          <span class="ornament-line"></span>
+        </div>
+
+        <div class="section-head reveal-up">
+
+          <p class="section-label">
+            Notre grand jour
+            <small class="ar-sub">يومنا الكبير</small>
+          </p>
+
+          <h2 class="section-title">
+            Le compte à rebours est lancé
+            <small class="ar-sub">بدأ العدّ التنازلي</small>
+          </h2>
+
+          <p class="section-text">
+            Chaque jour nous rapproche un peu plus de notre grand jour,
+            une célébration remplie d’amour, de joie et de souvenirs inoubliables.
+            <small class="ar-sub">
+              كل يوم يقرّبنا أكثر من يومنا الكبير،
+              يوم مليء بالحب والفرح والذكريات التي لا تُنسى
+            </small>
+          </p>
+
+        </div>
+
+        <!-- INFORMATIONS DU MARIAGE -->
+        <div class="event-highlight reveal-up">
+
+          <div class="event-highlight-icon">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+
+          <div class="event-highlight-content">
+
+            <span class="event-highlight-label">
+              Notre mariage
+              <small class="ar-sub">زفافنا</small>
+            </span>
+
+            <strong>
+              Le 22 août 2027 à 19h00
+              <small class="ar-sub">
+                يوم 22 غشت 2027 على الساعة السابعة مساءً
+              </small>
+            </strong>
+
+            <p>
+              Nous avons la joie de vous inviter à partager avec nous
+              ce merveilleux moment et à célébrer notre mariage entourés
+              de nos proches.
+            </p>
+
+            <p class="ar-sub">
+              يسعدنا أن نشارككم هذه اللحظة الجميلة
+              ونحتفل معكم بزفافنا وسط أهلنا وأحبائنا.
+            </p>
+
+          </div>
+        </div>
+
+        <!-- COUNTDOWN -->
+        <div class="countdown">
+
+          <div class="count-box reveal-up">
+            <span id="days">00</span>
+            <small>
+              Jours
+              <span class="ar-sub">أيام</span>
+            </small>
+          </div>
+
+          <div class="count-box reveal-up">
+            <span id="hours">00</span>
+            <small>
+              Heures
+              <span class="ar-sub">ساعات</span>
+            </small>
+          </div>
+
+          <div class="count-box reveal-up">
+            <span id="minutes">00</span>
+            <small>
+              Minutes
+              <span class="ar-sub">دقائق</span>
+            </small>
+          </div>
+
+          <div class="count-box reveal-up">
+            <span id="seconds">00</span>
+            <small>
+              Secondes
+              <span class="ar-sub">ثوانٍ</span>
+            </small>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- LIEU -->
+    <section class="section section-soft section-with-banner">
+
+      <div class="full-banner reveal-zoom">
+        <img src="assets/image3.jpg" alt="Palais des Roses - Tanger" class="section-banner-image">
+      </div>
+
+      <div class="section-head center reveal-up">
+
+        <div class="ornament">
+          <span class="ornament-line"></span>
+          <i class="fa-solid fa-location-dot"></i>
+          <span class="ornament-line"></span>
+        </div>
+
+        <p class="section-label">
+          Lieu & informations
+          <small class="ar-sub">المكان والمعلومات</small>
+        </p>
+
+        <h2 class="section-title">
+          Notre lieu de mariage
+          <small class="ar-sub">مكان زفافنا</small>
+        </h2>
+
+        <p class="section-text">
+          Nous serons heureux de vous retrouver pour célébrer
+          cette magnifique journée à nos côtés.
+          <small class="ar-sub">
+            يسعدنا أن نلتقي بكم للاحتفال معنا
+            في هذا اليوم المميز.
+          </small>
+        </p>
+
+      </div>
+
+      <div class="container">
+
+        <div class="cards-grid location-grid">
+
+          <article class="card card-soft location-card reception-card reveal-right">
+
+            <p class="card-subtitle">
+              Réception
+            </p>
+
+            <h3>
+              Palais des Roses
+              <small class="ar-sub">قصر الورود</small>
+            </h3>
+
+            <p class="card-line">
+              <i class="fa-regular fa-clock"></i>
+
+              <span class="line-text">
+                À partir de 19h00
+              </span>
+            </p>
+
+            <p class="card-line">
+              <i class="fa-solid fa-location-dot"></i>
+
+              <span class="line-text">
+                Palais des Roses, Tanger
+              </span>
+            </p>
+
+            <a class="text-link text-link-soft"
+              href="https://www.google.com/maps/search/?api=1&query=Palais+des+Roses+Tanger" target="_blank"
+              rel="noopener">
+
+              <span>
+                Ouvrir l’itinéraire
+              </span>
+
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </a>
+
+          </article>
+
+        </div>
+
+        <!-- GOOGLE MAPS -->
+        <div class="map-box reveal-up map-box-soft">
+
+          <iframe src="https://www.google.com/maps?q=Palais+des+Roses,+Tanger&output=embed" width="100%" height="100%"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BANNER -->
+    <div class="full-banner reveal-zoom">
+      <img src="assets/image4.jpg" alt="Décoration du mariage de Sarah et Amine" class="section-banner-image">
+    </div>
+
+
+    <!-- RSVP -->
+    <section class="section rsvp-section">
+
+      <div class="rsvp-bg-pattern" aria-hidden="true">
+
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+          <defs>
+
+            <pattern id="rsvpPat" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+
+              <path d="M20 0 L40 20 L20 40 L0 20 Z" fill="none" stroke="rgba(206,155,46,0.10)" stroke-width="0.6" />
+
+              <circle cx="20" cy="20" r="2" fill="rgba(206,155,46,0.08)" />
+
+            </pattern>
+
+          </defs>
+
+          <rect width="100%" height="100%" fill="url(#rsvpPat)" />
+
+        </svg>
+
+      </div>
+
+
+      <div class="container narrow">
+
+        <div class="section-heading reveal-fade">
+
+          <div class="ornament">
+
+            <span class="ornament-line"></span>
+
+            <i class="fa-solid fa-envelope-open-text"></i>
+
+            <span class="ornament-line"></span>
+
+          </div>
+
+          <p class="section-vibes">
+            Votre présence est notre plus beau cadeau
+          </p>
+
+          <p class="section-khat" dir="rtl">
+            المرجو تأكيد الحضور
+          </p>
+
+          <h2 class="section-titre">
+            Confirmation de Présence
+          </h2>
+
+          <p class="section-sous">
+            Votre présence est un précieux cadeau.
+            Merci de confirmer avant le
+            <strong> 22 Août 2027</strong>.
+          </p>
+
+        </div>
+
+
+        <form id="rsvpForm" class="rsvp-form reveal-fade" novalidate>
+
+          <div class="rsvp-field">
+
+            <label for="rsvpName">
+              <i class="fa-solid fa-user"></i>
+              Nom complet
+            </label>
+
+            <input type="text" id="rsvpName" name="rsvpName" placeholder="Votre nom et prénom" required
+              autocomplete="name">
+
+          </div>
+
+
+          <div class="rsvp-field">
+
+            <label>
+              <i class="fa-solid fa-circle-check"></i>
+              Votre réponse
+            </label>
+
+            <div class="rsvp-radio-group">
+
+              <label class="rsvp-radio">
+
+                <input type="radio" name="attendance" value="yes" checked>
+
+                <span>
+
+                  <i class="fa-solid fa-heart"></i>
+
+                  <strong>
+                    Avec grand plaisir
+                  </strong>
+
+                  <small>
+                    Je confirme ma présence.
+                  </small>
+
+                </span>
+
+              </label>
+
+
+              <label class="rsvp-radio">
+
+                <input type="radio" name="attendance" value="no">
+
+                <span>
+
+                  <i class="fa-regular fa-circle-xmark"></i>
+
+                  <strong>
+                    Avec regret
+                  </strong>
+
+                  <small>
+                    Je ne pourrai pas être présent(e).
+                  </small>
+
+                </span>
+
+              </label>
+
+            </div>
+
+          </div>
+
+
+          <div class="rsvp-field">
+
+            <label for="rsvpMessage">
+
+              <i class="fa-solid fa-comment-dots"></i>
+
+              Message
+              <span class="optional">
+                (optionnel)
+              </span>
+
+            </label>
+
+            <textarea id="rsvpMessage" name="rsvpMessage" rows="4"
+              placeholder="Un petit mot pour les mariés..."></textarea>
+
+          </div>
+
+
+          <div id="rsvpStatus" class="rsvp-status" aria-live="polite">
+          </div>
+
+
+          <div class="rsvp-actions">
+
+            <button type="submit" class="btn-royal">
+
+              <i class="fa-solid fa-paper-plane"></i>
+
+              <span>
+                Envoyer ma confirmation
+              </span>
+
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer footer-soft">
+
+      <div class="container center narrow reveal-up">
+
+        <div class="footer-divider"></div>
+
+        <h1 class="intro-title footer-title">
+          Sarah &amp; Amine
+        </h1>
+
+        <p class="footer-text">
+
+          Avec amour, joie et gratitude,
+          nous serions honorés de partager
+          ce moment si précieux avec vous.
+
+          <small class="ar-sub">
+            بكل حب وفرح وامتنان،
+            يشرفنا أن نشارككم هذه اللحظة الثمينة
+          </small>
+
+        </p>
+
+
+        <p class="footer-text">
+
+          Votre présence rendra cette journée
+          encore plus inoubliable.
+
+          <small class="ar-sub">
+            حضوركم سيجعل هذا اليوم أكثر جمالاً ولا يُنسى
+          </small>
+
+        </p>
+
+
+        <div class="footer-divider footer-divider-bottom"></div>
+
+
+        <p class="footer-copyright">
+
+          © 2027 Royal Digital Invite —
+          Tous droits réservés.
+
+        </p>
+
+      </div>
+
+    </footer>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
