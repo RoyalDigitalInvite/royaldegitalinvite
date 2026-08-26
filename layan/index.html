@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دعوة حفل العقيقة | ليان</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Aref+Ruqaa:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Ajustements typographiques arabes — sans toucher aux couleurs ni à la structure */
+    body,
+    .rsvp-field input,
+    .rsvp-field textarea,
+    .rsvp-field select,
+    .btn-royal,
+    .btn-royal-outline,
+    .rsvp-radio span,
+    .rsvp-field label,
+    .dress-tag,
+    .date-day,
+    .date-month,
+    .count-block small,
+    .badge-text,
+    .footer-copy,
+    .section-sous,
+    .hero-subtitle,
+    .lieu-card p,
+    .lieu-card h3,
+    .dress-card h3,
+    .dress-card p,
+    .section-titre {
+      font-family: "Amiri", "Reem Kufi", "Cinzel Decorative", serif;
+    }
+
+    .names-script,
+    .footer-names {
+      font-family: "Aref Ruqaa", "Amiri", serif;
+      direction: rtl;
+    }
+
+    .hero-quote,
+    .section-vibes {
+      font-family: "Aref Ruqaa", "Amiri", serif;
+      direction: rtl;
+    }
+
+    /* Petits ajustements RTL pour les ornements dégradés */
+    .badge-line,
+    .divider-wing,
+    .ornament-royal span {
+      background: linear-gradient(to left, transparent, var(--gold)) !important;
+    }
+
+    .hero-divider .divider-wing:last-child,
+    .ornament-royal span:last-child {
+      background: linear-gradient(to right, transparent, var(--gold-pale)) !important;
+    }
+
+    .rsvp-radio span {
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .date-num small {
+      margin-right: 4px;
+    }
+  </style>
+</head>
+
+<body class="intro-active">
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Décor marocain -->
+  <div class="moroccan-corners" aria-hidden="true">
+    <span class="corner tl"></span>
+    <span class="corner tr"></span>
+    <span class="corner bl"></span>
+    <span class="corner br"></span>
+  </div>
+
+  <div class="hanging-lantern lantern-left" aria-hidden="true"><span></span></div>
+  <div class="hanging-lantern lantern-right" aria-hidden="true"><span></span></div>
+
+  <!-- Fond zellige / arabesques -->
+  <div class="arabesque-bg" aria-hidden="true">
+    <div class="arabesque-orb orb-1"></div>
+    <div class="arabesque-orb orb-2"></div>
+    <div class="arabesque-orb orb-3"></div>
+
+    <svg class="pattern-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="zellij" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M30 0 L60 30 L30 60 L0 30 Z" fill="none" stroke="rgba(214,178,94,0.08)" stroke-width="0.8" />
+          <path d="M30 10 L50 30 L30 50 L10 30 Z" fill="none" stroke="rgba(214,178,94,0.06)" stroke-width="0.5" />
+          <circle cx="30" cy="30" r="3" fill="none" stroke="rgba(214,178,94,0.08)" stroke-width="0.5" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#zellij)" />
+    </svg>
+  </div>
+
+  <div id="floatingLogo" class="floating-logo" aria-hidden="true">
+    <img src="assets/royaldigitalinvite.svg" alt="Royal Digital Invite">
+  </div>
+
+  <button id="musicToggle" class="music-toggle" aria-label="كتم الموسيقى" type="button">
+    <i id="musicIcon" class="fa-solid fa-volume-high"></i>
+  </button>
+
+  <!-- INTRO -->
+  <section id="scene1" class="intro-screen" aria-label="فتح الدعوة">
+    <img id="videoEndFrame" class="video-end-frame" src="assets/image2.png" alt="زينة حفل عقيقة ليان">
+
+    <div id="introTrigger" class="intro-trigger" role="button" tabindex="0" aria-label="افتح الدعوة">
+      <img src="assets/enveloppe.png" alt="دعوة حفل عقيقة ليان" class="intro-cover">
+      <div class="intro-hint">
+        <span><i class="fa-regular fa-envelope-open"></i> افتح الدعوة</span>
+      </div>
+    </div>
+  </section>
+
+  <main id="scene2" class="hidden main-content">
+
+    <!-- HERO -->
+    <section id="countdownSection" class="section hero-section">
+      <div class="hero-medallion" aria-hidden="true">
+        <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" class="medallion-svg">
+          <g transform="translate(160,160)">
+            <polygon points="0,-90 18,-31 80,-26 31,12 50,72 0,38 -50,72 -31,12 -80,-26 -18,-31"
+              fill="rgba(214,178,94,0.04)" stroke="rgba(214,178,94,0.25)" stroke-width="1.5" />
+            <polygon points="0,90 -18,31 -80,26 -31,-12 -50,-72 0,-38 50,-72 31,-12 80,26 18,31"
+              fill="rgba(214,178,94,0.04)" stroke="rgba(214,178,94,0.25)" stroke-width="1.5" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="container center narrow">
+        <div class="hero-badge reveal-fade">
+          <span class="badge-line"></span>
+          <span class="badge-text">دعـوة حـفـل الـعـقـيـقـة</span>
+          <span class="badge-line"></span>
+        </div>
+
+        <p class="hero-quote reveal-fade">أهلاً وسهلاً بكم في فرحتنا</p>
+
+        <div class="hero-names reveal-fade">
+          <h1 class="names-script">ليان</h1>
+          <p class="names-arabic" dir="rtl">قرة عيننا وفلذة كبدنا</p>
+        </div>
+
+        <div class="hero-divider reveal-fade">
+          <span class="divider-wing"></span>
+          <span class="divider-heart"><i class="fa-solid fa-heart"></i></span>
+          <span class="divider-wing"></span>
+        </div>
+
+        <p class="hero-subtitle reveal-fade">
+          رزقنا اللّٰه بمولودتنا فالحمد لله والشكر له على نعمه وفضله،
+          ونسأل اللّٰه أن يجعلها من الصالحين، ويرزقنا برّها ويجعلها قرة عين لنا.
+        </p>
+
+        <div class="event-date-block reveal-fade">
+          <div class="date-pillar">
+            <span class="date-day">الجمعة</span>
+            <span class="date-num">11</span>
+            <span class="date-month">شتنبر 2026</span>
+          </div>
+          <div class="date-divider-v"></div>
+          <div class="date-pillar">
+            <i class="fa-regular fa-clock date-icon"></i>
+            <span class="date-num">18 <small>:00</small></span>
+            <span class="date-month">استقبال الضيوف</span>
+          </div>
+        </div>
+
+        <div class="countdown-wrapper reveal-fade">
+          <p class="countdown-label" dir="rtl">موعدنا يقترب بإذن الله</p>
+          <div class="countdown">
+            <div class="count-block">
+              <div class="count-inner"><span id="days">00</span></div>
+              <small>أيام</small>
+            </div>
+            <div class="count-sep">:</div>
+            <div class="count-block">
+              <div class="count-inner"><span id="hours">00</span></div>
+              <small>ساعات</small>
+            </div>
+            <div class="count-sep">:</div>
+            <div class="count-block">
+              <div class="count-inner"><span id="minutes">00</span></div>
+              <small>دقائق</small>
+            </div>
+            <div class="count-sep">:</div>
+            <div class="count-block">
+              <div class="count-inner"><span id="seconds">00</span></div>
+              <small>ثوانٍ</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIEU -->
+    <section class="section section-lieu" style="padding-top: 0 !important;">
+      <div class="full-banner reveal-zoom" style="margin-bottom: 0 !important;">
+        <img src="assets/image3.png" alt="مكان حفل العقيقة" class="section-banner-image"
+          style="object-position: center -50px;">
+        <div class="banner-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="section-heading reveal-fade">
+          <div class="ornament-royal">
+            <span></span><i class="fa-solid fa-location-dot"></i><span></span>
+          </div>
+          <p class="section-vibes">أمسيةٌ لا تُنسى بانتظاركم</p>
+          <p class="section-khat" dir="rtl">مكان الحفل والموقع</p>
+          <h2 class="section-titre">المكان والعنوان</h2>
+        </div>
+
+        <div class="lieu-grid">
+          <article class="lieu-card reveal-left">
+            <div class="lieu-card-icon"><i class="fa-solid fa-house-chimney"></i></div>
+            <h3>منزل العائلة</h3>
+            <p><i class="fa-solid fa-city"></i> تجزئة النخيل، طنجة البالية</p>
+            <p><i class="fa-solid fa-hashtag"></i> رقم 150</p>
+            <div class="lieu-card-deco"></div>
+          </article>
+         <article class="lieu-card reveal-right">
+  <div class="lieu-card-icon">
+    <i class="fa-solid fa-map"></i>
+  </div>
+
+  <h3>موقع الحفل</h3>
+
+  <p>يسعدنا حضوركم ومشاركتنا هذه المناسبة الجميلة، ويمكنكم الوصول إلى مكان الحفل بسهولة عبر خرائط Google.</p>
+
+  <a class="btn-royal-outline"
+     href="https://www.google.com/maps/place/35%C2%B045'48.3%22N+5%C2%B045'17.6%22W/@35.7634201,-5.7574687,17z/data=!3m1!4b1!4m4!3m3!8m2!3d35.7634201!4d-5.7548938?hl=fr&entry=ttu&g_ep=EgoyMDI2MDgyMy4wIKXMDSoASAFQAw%3D%3D"
+     target="_blank"
+     rel="noopener">
+    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    الوصول إلى الموقع
+  </a>
+
+  <div class="lieu-card-deco"></div>
+</article>
+
+          
+        </div>
+<div class="map-box reveal-fade" style="margin-bottom: 0 !important;">
+  <iframe
+    src="https://www.google.com/maps?q=35.7634201,-5.7548938&output=embed"
+    width="100%"
+    height="100%"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+        
+      </div>
+    </section>
+
+
+       <!-- LIEU 
+    <section class="section section-lieu" style="padding-top: 0 !important;">
+      <div class="full-banner reveal-zoom" style="margin-bottom: 0 !important;">
+        <img src="assets/image3.png" alt="Lieu de la cérémonie" class="section-banner-image"
+          style="object-position: center -50px;">
+        <div class="banner-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="section-heading reveal-fade">
+          <div class="ornament-royal">
+            <span></span><i class="fa-solid fa-location-dot"></i><span></span>
+          </div>
+          <p class="section-vibes">Un soir inoubliable nous attend</p>
+          <p class="section-khat" dir="rtl">مكان الحفل والموقع</p>
+          <h2 class="section-titre">Lieu &amp; Itinéraire</h2>
+        </div>
+
+        <div class="lieu-grid">
+          <article class="lieu-card reveal-left">
+            <div class="lieu-card-icon"><i class="fa-solid fa-building"></i></div>
+            <h3>Palais Des Roses</h3>
+            <p><i class="fa-solid fa-city"></i> Tanger, Maroc</p>
+            <div class="lieu-card-deco"></div>
+          </article>
+
+          <article class="lieu-card reveal-right">
+            <div class="lieu-card-icon"><i class="fa-solid fa-map"></i></div>
+            <h3>Navigation</h3>
+            <p>Accédez facilement à la localisation via Google Maps.</p>
+            <a class="btn-royal-outline" href="https://maps.app.goo.gl/2X31Jia2iaJmqaAZ9" target="_blank"
+              rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              Ouvrir l'itinéraire
+            </a>
+            <div class="lieu-card-deco"></div>
+          </article>
+        </div>
+
+        <div class="map-box reveal-fade" style="margin-bottom: 0 !important;">
+          <iframe src="https://www.google.com/maps?q=Palais%20Des%20Roses%20Tanger%20Maroc&output=embed" width="100%"
+            height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>-->
+    <!-- INFOS -->
+ 
+
+    <!-- RSVP 
+    <section class="section rsvp-section">
+      <div class="section-separator">
+        <div class="sep-line"></div>
+        <div class="sep-center">✦ ✦ ✦</div>
+        <div class="sep-line right"></div>
+      </div>
+
+      <div class="rsvp-bg-pattern" aria-hidden="true">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="rsvpPat" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M20 0 L40 20 L20 40 L0 20 Z" fill="none" stroke="rgba(214,178,94,0.08)" stroke-width="0.6" />
+              <circle cx="20" cy="20" r="2" fill="rgba(214,178,94,0.07)" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#rsvpPat)" />
+        </svg>
+      </div>
+
+      <div class="container narrow">
+        <div class="section-heading reveal-fade">
+          <div class="ornament-royal">
+            <span></span><i class="fa-solid fa-envelope-open-text"></i><span></span>
+          </div>
+          <p class="section-vibes">حضوركم أغلى هدية</p>
+          <p class="section-khat" dir="rtl">المرجو تأكيد الحضور</p>
+          <h2 class="section-titre">تأكيد الحضور</h2>
+          <p class="section-sous">
+            حضوركم يزيد فرحتنا ويكمل بهجة هذه المناسبة.
+            نرجو منكم تأكيد الحضور قبل تاريخ <strong>11 شتنبر 2026</strong>.
+          </p>
+        </div>
+
+        <form id="rsvpForm" class="rsvp-form reveal-fade" novalidate>
+          <div class="rsvp-field">
+            <label for="rsvpName">
+              <i class="fa-solid fa-user"></i> الاسم 
+            </label>
+            <input type="text" id="rsvpName" name="rsvpName" placeholder="الرجاء كتابة اسمكم الكامل" required
+              autocomplete="name">
+          </div>
+
+          <div class="rsvp-field">
+            <label>
+              <i class="fa-solid fa-circle-check"></i> إجابتكم
+            </label>
+            <div class="rsvp-radio-group">
+              <label class="rsvp-radio">
+                <input type="radio" name="attendance" value="yes" checked>
+                <span>
+                  <i class="fa-solid fa-heart"></i>
+                  <strong>بكل سرور</strong>
+                  <small>سأكون معكم في هذا اليوم المبارك.</small>
+                </span>
+              </label>
+
+              <label class="rsvp-radio">
+                <input type="radio" name="attendance" value="no">
+                <span>
+                  <i class="fa-regular fa-circle-xmark"></i>
+                  <strong>مع الأسف</strong>
+                  <small>لن أتمكن من الحضور، أعتذر.</small>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="rsvp-field">
+            <label for="rsvpMessage">
+              <i class="fa-solid fa-comment-dots"></i> رسالة <span class="optional">(اختياري)</span>
+            </label>
+            <textarea id="rsvpMessage" name="rsvpMessage" rows="4"
+              placeholder="كلمة جميلة للمولودة وأهلها..."></textarea>
+          </div>
+
+          <div id="rsvpStatus" class="rsvp-status" aria-live="polite"></div>
+
+          <div class="rsvp-actions">
+            <button type="submit" class="btn-royal">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>إرسال تأكيد الحضور</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>-->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-ornament" aria-hidden="true">
+          <svg viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="15" x2="120" y2="15" stroke="rgba(214,178,94,0.30)" stroke-width="0.8" />
+            <circle cx="150" cy="15" r="6" fill="none" stroke="rgba(214,178,94,0.45)" stroke-width="1" />
+            <circle cx="150" cy="15" r="2" fill="rgba(214,178,94,0.40)" />
+            <line x1="180" y1="15" x2="300" y2="15" stroke="rgba(214,178,94,0.30)" stroke-width="0.8" />
+          </svg>
+        </div>
+
+        <h2 class="footer-names">ليان</h2>
+        <p class="footer-arabic" dir="rtl">حضوركم يسعدنا ويزيد فرحتنا</p>
+        <p class="footer-text" dir="rtl">
+          بالحب والفرح والامتنان، يشرفنا أن نحتفل بهذه اللحظة معكم،
+          ونسأل اللّٰه أن يجعل ليان من الصالحين ويرزقنا برّها.
+        </p>
+
+        <div class="footer-ornament footer-ornament-bottom" aria-hidden="true">
+          <svg viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="15" x2="120" y2="15" stroke="rgba(214,178,94,0.30)" stroke-width="0.8" />
+            <circle cx="150" cy="15" r="6" fill="none" stroke="rgba(214,178,94,0.45)" stroke-width="1" />
+            <circle cx="150" cy="15" r="2" fill="rgba(214,178,94,0.40)" />
+            <line x1="180" y1="15" x2="300" y2="15" stroke="rgba(214,178,94,0.30)" stroke-width="0.8" />
+          </svg>
+        </div>
+
+<p class="footer-copy">© 2026 Royal Digital Invite — Tous droits réservés</p>      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
