@@ -13,13 +13,13 @@ const WEDDING_CONFIG = {
   brideName: "Samia",
   groomName: "Zaid",
   /* Vendredi 23 Octobre 2026 à 17h00 — قصر الأنوار */
-  weddingDate: new Date(2026, 9, 23, 18, 0, 0).getTime(),
+  weddingDate: new Date(2026, 9, 23, 17, 0, 0).getTime(),
   venue: "Palais Al Anwar — Marrakech",
   weddingDayText: "Vendredi 23 Octobre 2026",
   weddingTimeText: "À partir de 17h00",
   rsvpDeadline: "Merci de confirmer avant le 15 Octobre 2026",
-  rsvpDeadlineDate: new Date(2026, 9, 15, 23, 59, 59).getTime() // 15 octobre 2026 à 23h59
-};
+  rsvpDeadlineDate: new Date(2026, 9, 23, 17, 0, 0).getTime()
+}// 23 octobre 2026 à 17h00
 
 /* ─── Reveal Animations ─── */
 function initRevealAnimations() {
