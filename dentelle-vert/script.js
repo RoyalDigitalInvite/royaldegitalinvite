@@ -13,7 +13,7 @@ const WEDDING_CONFIG = {
   whatsappNumber: "212696687166",
   brideName: "Sarah",
   groomName: "Mohammed",
-  weddingDate: new Date(2026, 7, 22, 17, 0, 0).getTime(),
+  weddingDate: new Date(2028, 7, 22, 17, 0, 0).getTime(),
   venue: "Palais des roses — Tanger",
   weddingDayText: "Samedi 22 Août 2026",
   weddingTimeText: "À partir de 18h00",
