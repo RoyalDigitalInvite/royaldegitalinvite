@@ -9,7 +9,7 @@ let revealObserverInitialized = false;
 let introStarted = false;
 
 const WEDDING_CONFIG = {
-  whatsappNumber: "+33763795363",
+  whatsappNumber: "212707003003",
   brideName: "Imane",
   groomName: "Oussama",
   weddingDate: new Date(2026, 8, 26, 17, 0, 0).getTime(),
@@ -79,7 +79,7 @@ function startMusic() {
   bgMusic.volume = 1;
   const promise = bgMusic.play();
   if (promise !== undefined) {
-    promise.then(() => updateMusicIcon()).catch(() => {});
+    promise.then(() => updateMusicIcon()).catch(() => { });
   } else {
     updateMusicIcon();
   }
@@ -91,7 +91,7 @@ function toggleMusic() {
     bgMusic.volume = 1;
     const promise = bgMusic.play();
     if (promise !== undefined) {
-      promise.then(() => updateMusicIcon()).catch(() => {});
+      promise.then(() => updateMusicIcon()).catch(() => { });
     } else {
       updateMusicIcon();
     }
@@ -161,10 +161,10 @@ if (bgMusic) {
 }
 
 /* ─── Countdown ─── */
-const daysEl     = document.getElementById("days");
-const hoursEl    = document.getElementById("hours");
-const minutesEl  = document.getElementById("minutes");
-const secondsEl  = document.getElementById("seconds");
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
 
 function updateCountdown() {
   if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
@@ -179,13 +179,13 @@ function updateCountdown() {
     return;
   }
 
-  const days    = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  daysEl.textContent    = String(days).padStart(2, "0");
-  hoursEl.textContent   = String(hours).padStart(2, "0");
+  daysEl.textContent = String(days).padStart(2, "0");
+  hoursEl.textContent = String(hours).padStart(2, "0");
   minutesEl.textContent = String(minutes).padStart(2, "0");
   secondsEl.textContent = String(seconds).padStart(2, "0");
 }
@@ -194,7 +194,7 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 /* ─── RSVP Form ─── */
-const rsvpForm   = document.getElementById("rsvpForm");
+const rsvpForm = document.getElementById("rsvpForm");
 const rsvpStatus = document.getElementById("rsvpStatus");
 
 function showStatus(message, type = "success") {
@@ -297,13 +297,13 @@ if (rsvpForm) {
     e.preventDefault();
     clearStatus();
 
-    const nameField       = document.getElementById("rsvpName");
-     const messageField    = document.getElementById("rsvpMessage");
+    const nameField = document.getElementById("rsvpName");
+    const messageField = document.getElementById("rsvpMessage");
     const attendanceField = rsvpForm.querySelector('input[name="attendance"]:checked');
 
-    const name       = nameField       ? nameField.value.trim()    : "";
-     const message    = messageField    ? messageField.value.trim() : "";
-    const attendance = attendanceField ? attendanceField.value      : "yes";
+    const name = nameField ? nameField.value.trim() : "";
+    const message = messageField ? messageField.value.trim() : "";
+    const attendance = attendanceField ? attendanceField.value : "yes";
 
     let hasError = false;
 
@@ -313,7 +313,7 @@ if (rsvpForm) {
       hasError = true;
     }
 
-    
+
 
     if (hasError) {
       showStatus("Merci de corriger les champs indiqués avant l'envoi.", "error");
@@ -323,11 +323,11 @@ if (rsvpForm) {
     const encodedMessage = buildWhatsAppMessage({
       name,
       attendance,
-       message
+      message
     });
 
     const whatsappUrl = `https://wa.me/${WEDDING_CONFIG.whatsappNumber}?text=${encodedMessage}`;
-    const submitBtn   = rsvpForm.querySelector(".btn-royal");
+    const submitBtn = rsvpForm.querySelector(".btn-royal");
 
     showStatus("Ouverture de WhatsApp en cours...", "success");
 
@@ -338,7 +338,7 @@ if (rsvpForm) {
       setTimeout(() => {
         openWhatsApp(whatsappUrl);
         submitBtn.innerHTML = originalHTML;
-        submitBtn.disabled  = false;
+        submitBtn.disabled = false;
       }, 500);
     } else {
       openWhatsApp(whatsappUrl);
