@@ -383,6 +383,31 @@
     integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg=="
     data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous">
     </script>
+  <script>
+    (function () {
+      var video = document.getElementById('video1');
+      var hint = document.getElementById('swipeUpHintEnd');
+      if (!video || !hint) return;
+
+      // Apparaît quand la vidéo d'intro est terminée
+      video.addEventListener('ended', function () {
+        hint.classList.add('is-visible');
+      });
+
+      // (optionnel) le fait disparaître dès que la personne commence à défiler
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 40) {
+          hint.classList.remove('is-visible');
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+  <!-- SWIPE UP — apparaît après la fin de la vidéo -->
+  <div id="swipeUpHintEnd" class="swipe-up-hint-end" aria-hidden="true">
+    <span class="swipe-up-hint-end-text">Desliza hacia arriba</span>
+    <i class="fa-solid fa-arrow-up swipe-up-hint-end-arrow" aria-hidden="true"></i>
+  </div>
 
 </body>
 

@@ -1540,44 +1540,30 @@ body.butterflies-active .butterflies-layer {
   }
 }
 
-/* =========================================================
-   ICONO DE MÚSICA — botón fijo
-   ========================================================= */
+/* ========================= */
+/*    BOUTON MUSIQUE (toggle) */
+/* ========================= */
 .music-toggle {
   position: fixed;
-  top: 18px;
   right: 18px;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
+  bottom: 18px;
+  z-index: 6000;
+  /* au-dessus de l'intro (5000) */
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border-rose);
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.72);
   color: var(--brown-deep);
+  font-size: 1.05rem;
+  cursor: pointer;
   box-shadow: var(--shadow);
   backdrop-filter: blur(8px);
-  cursor: pointer;
-  z-index: 9998;
-  transition: var(--transition);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-8px);
-}
-
-/* Se muestra cuando la invitación se abre (mismo momento que la música) */
-body.logo-active .music-toggle,
-body.butterflies-active .music-toggle,
-body.intro-finished .music-toggle {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-}
-
-.music-toggle i {
-  font-size: 1rem;
-  line-height: 1;
+  transition: transform 0.35s ease, box-shadow 0.35s ease,
+    background 0.35s ease, color 0.35s ease;
 }
 
 .music-toggle:hover {
@@ -1586,15 +1572,18 @@ body.intro-finished .music-toggle {
 }
 
 .music-toggle:focus-visible {
-  outline: 2px solid var(--rose-deep);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
-/* Estado: la música suena */
-.music-toggle.is-playing {
-  background: linear-gradient(135deg, var(--rose-soft), var(--rose));
-  color: var(--forest);
-  border-color: rgba(192, 152, 144, 0.45);
+/* état "musique en lecture" : le bouton porte déjà aria-pressed="true" */
+.music-toggle[aria-pressed="true"] {
+  background: linear-gradient(135deg, var(--rose-soft), var(--gold));
+  color: var(--brown-deep);
+  border-color: transparent;
+}
+
+.music-toggle[aria-pressed="true"] i {
   animation: musicPulse 2.4s ease-in-out infinite;
 }
 
@@ -1602,29 +1591,72 @@ body.intro-finished .music-toggle {
 
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(192, 152, 144, 0.42);
+    transform: scale(1);
   }
 
-  60% {
-    box-shadow: 0 0 0 12px rgba(192, 152, 144, 0);
+  50% {
+    transform: scale(1.14);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .music-toggle {
-    top: 12px;
-    right: 12px;
-    width: 40px;
-    height: 40px;
-  }
-
-  .music-toggle i {
-    font-size: 0.88rem;
+    width: 46px;
+    height: 46px;
+    right: 14px;
+    bottom: 14px;
+    font-size: 0.95rem;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .music-toggle.is-playing {
-    animation: none !important;
+/* ========================= */
+/*  SWIPE UP (fin de vidéo)  */
+/* ========================= */
+.swipe-up-hint-end {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%) translateY(14px);
+  z-index: 5900;
+  /* sous le bouton musique, au-dessus du contenu */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brown-deep);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border-rose);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.6s ease, transform 0.6s ease, visibility 0.6s ease;
+}
+
+.swipe-up-hint-end.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.swipe-up-hint-end-arrow {
+  color: var(--accent);
+  animation: swipeUpArrowEnd 1.6s ease-in-out infinite;
+}
+
+@keyframes swipeUpArrowEnd {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
   }
 }
