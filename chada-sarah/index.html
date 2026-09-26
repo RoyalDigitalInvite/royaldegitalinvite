@@ -35,10 +35,6 @@
   </audio>
 
 
-  <!-- ICONO DE MÚSICA -->
-  <button id="musicToggle" class="music-toggle" type="button" aria-label="Reproducir la música" aria-pressed="false">
-    <i class="fa-solid fa-music" aria-hidden="true"></i>
-  </button>
 
   <!-- INTRO / HERO -->
   <section id="scene1" class="intro-screen" aria-label="Apertura de la invitación">
@@ -62,9 +58,9 @@
     <img id="videoEndFrame" class="video-end-frame" src="assets/design1.png" alt="Final de la animación">
 
     <!-- SWIPE UP -->
-    <div class="swipe-hint" aria-hidden="true">
-      <span class="swipe-hint-text">Desliza hacia arriba</span>
-      <i class="fa-solid fa-arrow-up swipe-hint-arrow"></i>
+    <div id="swipeUpHintEnd" class="swipe-hint" aria-hidden="true">
+      <span class="swipe-hint-text">Desliza hacia abajo</span>
+      <i class="fa-solid fa-arrow-down swipe-hint-arrow"></i>
     </div>
 
   </section>
@@ -403,11 +399,6 @@
     })();
   </script>
 
-  <!-- SWIPE UP — apparaît après la fin de la vidéo -->
-  <div id="swipeUpHintEnd" class="swipe-up-hint-end" aria-hidden="true">
-    <span class="swipe-up-hint-end-text">Desliza hacia arriba</span>
-    <i class="fa-solid fa-arrow-up swipe-up-hint-end-arrow" aria-hidden="true"></i>
-  </div>
 
 </body>
 

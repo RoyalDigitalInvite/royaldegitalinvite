@@ -1660,3 +1660,44 @@ body.butterflies-active .butterflies-layer {
     transform: translateY(-4px);
   }
 }
+
+/* Indicador SWIPE DOWN — aparece al terminar el vídeo, abajo de la pantalla */
+#swipeUpHintEnd {
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  pointer-events: none;
+}
+
+#swipeUpHintEnd.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#swipeUpHintEnd .swipe-hint-arrow {
+  animation: swipeDownHintBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes swipeDownHintBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 200px) {
+  #swipeUpHintEnd {
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #swipeUpHintEnd .swipe-hint-arrow {
+    animation: none !important;
+  }
+}
