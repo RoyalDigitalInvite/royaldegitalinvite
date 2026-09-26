@@ -1462,3 +1462,169 @@ body.butterflies-active .butterflies-layer {
     height: calc(100% - 16px);
   }
 }
+
+/* =========================================================
+   SWIPE UP — indicador sobre la imagen final
+   ========================================================= */
+.swipe-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.9s ease 0.5s, visibility 0.9s ease 0.5s;
+}
+
+.intro-screen.show-end-frame .swipe-hint {
+  opacity: 1;
+  visibility: visible;
+}
+
+.swipe-hint-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(47, 61, 48, 0.6);
+}
+
+.swipe-hint-arrow {
+  font-size: 0.95rem;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(47, 61, 48, 0.6);
+  animation: swipeHintBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes swipeHintBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .swipe-hint {
+    bottom: 18px;
+    gap: 5px;
+  }
+
+  .swipe-hint-text {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+  }
+
+  .swipe-hint-arrow {
+    font-size: 0.82rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swipe-hint-arrow {
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   ICONO DE MÚSICA — botón fijo
+   ========================================================= */
+.music-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-rose);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--brown-deep);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  z-index: 9998;
+  transition: var(--transition);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+}
+
+/* Se muestra cuando la invitación se abre (mismo momento que la música) */
+body.logo-active .music-toggle,
+body.butterflies-active .music-toggle,
+body.intro-finished .music-toggle {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.music-toggle i {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.music-toggle:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.music-toggle:focus-visible {
+  outline: 2px solid var(--rose-deep);
+  outline-offset: 3px;
+}
+
+/* Estado: la música suena */
+.music-toggle.is-playing {
+  background: linear-gradient(135deg, var(--rose-soft), var(--rose));
+  color: var(--forest);
+  border-color: rgba(192, 152, 144, 0.45);
+  animation: musicPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(192, 152, 144, 0.42);
+  }
+
+  60% {
+    box-shadow: 0 0 0 12px rgba(192, 152, 144, 0);
+  }
+}
+
+@media (max-width: 600px) {
+  .music-toggle {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .music-toggle i {
+    font-size: 0.88rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-toggle.is-playing {
+    animation: none !important;
+  }
+}

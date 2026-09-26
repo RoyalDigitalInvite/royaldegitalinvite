@@ -214,3 +214,177 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("contextmenu", (e) => e.preventDefault());
+/* ========================= */
+/*   PAUSA DE LA MÚSICA      */
+/* ========================= */
+let musicWasPlaying = false;
+
+function pauseMusicOnLeave() {
+  if (!bgMusic) return;
+
+  musicWasPlaying = !bgMusic.paused && !bgMusic.ended;
+
+  if (musicWasPlaying) {
+    bgMusic.pause();
+  }
+}
+
+function resumeMusicOnReturn() {
+  if (!bgMusic) return;
+
+  if (musicWasPlaying && introStarted) {
+    const p = bgMusic.play();
+    if (p !== undefined) {
+      p.catch((err) => console.log("Reanudación de audio bloqueada:", err));
+    }
+  }
+
+  musicWasPlaying = false;
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    pauseMusicOnLeave();
+  } else {
+    resumeMusicOnReturn();
+  }
+});
+
+window.addEventListener("pagehide", pauseMusicOnLeave);
+window.addEventListener("blur", pauseMusicOnLeave);
+window.addEventListener("focus", resumeMusicOnReturn);
+window.addEventListener("pageshow", resumeMusicOnReturn);
+/* ========================= */
+/*  ICONO DE MÚSICA  +  REINICIO AL VOLVER  */
+/* ========================= */
+/* Reutiliza bgMusic e introStarted ya declarados arriba.
+   No vuelve a declararlos. */
+
+const musicToggle = document.getElementById("musicToggle");
+
+let userMuted = false;        /* el usuario ha silenciado la música a mano */
+let musicShouldPlay = false;  /* la música debe sonar (después del primer gesto) */
+
+/* --- Icono: refleja el estado real --- */
+function setMusicIcon(isPlaying) {
+  if (!musicToggle) return;
+
+  musicToggle.classList.toggle("is-playing", isPlaying);
+  musicToggle.setAttribute("aria-pressed", isPlaying ? "true" : "false");
+  musicToggle.setAttribute(
+    "aria-label",
+    isPlaying ? "Pausar la música" : "Reproducir la música"
+  );
+
+  const icon = musicToggle.querySelector("i");
+  if (icon) {
+    icon.className = isPlaying ? "fa-solid fa-pause" : "fa-solid fa-music";
+  }
+}
+
+/* --- Lectura protegida contra el bloqueo de autoplay --- */
+function playMusic() {
+  if (!bgMusic) return;
+
+  const promise = bgMusic.play();
+
+  if (promise !== undefined) {
+    promise
+      .then(() => setMusicIcon(true))
+      .catch((err) => {
+        console.log("Reproducción de audio bloqueada:", err);
+        setMusicIcon(false);
+      });
+  } else {
+    setMusicIcon(true);
+  }
+}
+
+/* --- El usuario pulsa el icono --- */
+function toggleMusic() {
+  if (!bgMusic) return;
+
+  if (bgMusic.paused || bgMusic.ended) {
+    /* Volver a poner la música: se cancela el silencio manual */
+    userMuted = false;
+    musicShouldPlay = true;
+
+    if (bgMusic.ended || bgMusic.currentTime >= (bgMusic.duration || 0)) {
+      bgMusic.currentTime = 0;
+    }
+
+    playMusic();
+  } else {
+    /* Silencio manual: no se reiniciará al volver */
+    userMuted = true;
+    musicShouldPlay = false;
+    bgMusic.pause();
+    setMusicIcon(false);
+  }
+}
+
+if (musicToggle) {
+  musicToggle.addEventListener("click", toggleMusic);
+}
+
+/* --- Pausa al salir de la página --- */
+function pauseMusicOnLeave() {
+  if (!bgMusic || bgMusic.paused) return;
+  bgMusic.pause();
+  setMusicIcon(false);
+}
+
+/* --- Reinicia la música DESDE EL PRINCIPIO al volver --- */
+function restartMusicOnReturn() {
+  if (!bgMusic) return;
+  if (userMuted) return;         /* respeta el silencio manual */
+  if (!musicShouldPlay) return;  /* la música aún no se ha iniciado */
+  if (!bgMusic.paused) return;   /* ya está sonando: no la tocamos */
+
+  bgMusic.currentTime = 0;
+  playMusic();
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    pauseMusicOnLeave();
+  } else {
+    restartMusicOnReturn();
+  }
+});
+
+/* Caché « atrás/adelante » del móvil (BFCache) */
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    restartMusicOnReturn();
+  }
+});
+
+window.addEventListener("pagehide", pauseMusicOnLeave);
+window.addEventListener("focus", restartMusicOnReturn);
+
+/* --- Primer gesto del usuario: abre la música si el navegador la bloqueó --- */
+function markMusicStarted() {
+  musicShouldPlay = true;
+}
+
+if (introTrigger) {
+  introTrigger.addEventListener("click", markMusicStarted);
+  introTrigger.addEventListener("keydown", markMusicStarted);
+}
+
+function unlockMusicOnFirstGesture() {
+  if (!musicShouldPlay || !bgMusic || userMuted) return;
+  if (bgMusic.paused) {
+    bgMusic.currentTime = 0;
+    playMusic();
+  }
+}
+
+document.addEventListener("pointerdown", unlockMusicOnFirstGesture);
+document.addEventListener("keydown", unlockMusicOnFirstGesture);
+
+/* --- Estado inicial del icono --- */
+document.addEventListener("DOMContentLoaded", () => {
+  setMusicIcon(bgMusic ? !bgMusic.paused : false);
+});

@@ -34,6 +34,12 @@
     <source src="assets/music.mp3" type="audio/mpeg">
   </audio>
 
+
+  <!-- ICONO DE MÚSICA -->
+  <button id="musicToggle" class="music-toggle" type="button" aria-label="Reproducir la música" aria-pressed="false">
+    <i class="fa-solid fa-music" aria-hidden="true"></i>
+  </button>
+
   <!-- INTRO / HERO -->
   <section id="scene1" class="intro-screen" aria-label="Apertura de la invitación">
 
@@ -47,18 +53,22 @@
       <source src="assets/design1.mp4" type="video/mp4">
     </video>
 
-    <div class="flying-birds birds-1" aria-hidden="true">
-      <img src="assets/birds.svg" alt="">
-    </div>
 
-    <div class="flying-birds birds-2" aria-hidden="true">
-      <img src="assets/birds.svg" alt="">
-    </div>
 
+
+
+    <!-- IMAGEN FIJA FINAL -->
     <!-- IMAGEN FIJA FINAL -->
     <img id="videoEndFrame" class="video-end-frame" src="assets/design1.png" alt="Final de la animación">
 
+    <!-- SWIPE UP -->
+    <div class="swipe-hint" aria-hidden="true">
+      <span class="swipe-hint-text">Desliza hacia arriba</span>
+      <i class="fa-solid fa-arrow-up swipe-hint-arrow"></i>
+    </div>
+
   </section>
+
 
   <!-- CONTENIDO PRINCIPAL -->
   <main id="scene2" class="hidden main-content">
