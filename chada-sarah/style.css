@@ -1663,7 +1663,7 @@ body.butterflies-active .butterflies-layer {
 
 /* Indicador SWIPE DOWN — aparece al terminar el vídeo, abajo de la pantalla */
 #swipeUpHintEnd {
-  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  bottom: calc(26px + env(safe-area-inset-bottom, 0px));
   pointer-events: none;
 }
 
@@ -1690,7 +1690,7 @@ body.butterflies-active .butterflies-layer {
   }
 }
 
-@media (max-width: 200px) {
+@media (max-width: 600px) {
   #swipeUpHintEnd {
     bottom: calc(18px + env(safe-area-inset-bottom, 0px));
   }
