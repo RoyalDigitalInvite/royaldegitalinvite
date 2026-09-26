@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación Chada | Sarah</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Amiri:wght@400;700&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="intro-active">
+
+  <!-- MARIPOSAS -->
+  <div class="butterflies-layer" aria-hidden="true">
+    <img class="butterfly butterfly-1" src="assets/butterflies/27.svg" alt="">
+    <img class="butterfly butterfly-2" src="assets/butterflies/28.svg" alt="">
+    <img class="butterfly butterfly-3" src="assets/butterflies/29.svg" alt="">
+    <img class="butterfly butterfly-4" src="assets/butterflies/30.svg" alt="">
+    <img class="butterfly butterfly-5" src="assets/butterflies/31.svg" alt="">
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- INTRO / HERO -->
+  <section id="scene1" class="intro-screen" aria-label="Apertura de la invitación">
+
+    <div id="introTrigger" class="intro-trigger" role="button" tabindex="0" aria-label="Abrir la invitación">
+
+      <img src="assets/enveloppe.png" alt="Invitación Chada de Sarah" class="intro-cover">
+    </div>
+
+    <video id="video1" class="intro-video" playsinline muted preload="auto" poster="assets/design1-end.jpg">
+
+      <source src="assets/design1.mp4" type="video/mp4">
+    </video>
+
+    <div class="flying-birds birds-1" aria-hidden="true">
+      <img src="assets/birds.svg" alt="">
+    </div>
+
+    <div class="flying-birds birds-2" aria-hidden="true">
+      <img src="assets/birds.svg" alt="">
+    </div>
+
+    <!-- IMAGEN FIJA FINAL -->
+    <img id="videoEndFrame" class="video-end-frame" src="assets/design1.png" alt="Final de la animación">
+
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="scene2" class="hidden main-content">
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- CUENTA ATRÁS -->
+    <!-- ═══════════════════════════════════════ -->
+
+    <section id="countdownSection" class="section section-light">
+
+      <div class="container center narrow">
+
+        <div class="section-head reveal-up">
+
+          <p class="section-label">
+            Nuestra gran celebración
+          </p>
+
+          <h2 class="section-title">
+            La cuenta atrás ha comenzado
+          </h2>
+
+          <p class="section-text">
+            Cada día que pasa nos acerca a una celebración
+            llena de alegría, tradiciones familiares y bonitas energías.
+          </p>
+
+        </div>
+
+
+        <!-- HORARIO + FECHA -->
+        <div class="event-highlight reveal-up">
+
+          <div class="event-highlight-icon">
+            <i class="fa-regular fa-calendar-days"></i>
+          </div>
+
+          <div class="event-highlight-content">
+
+            <span class="event-highlight-label">
+              Fecha y horario de la celebración
+            </span>
+
+            <strong>
+              28 de noviembre de 2026 — A partir de las 17:30
+            </strong>
+
+            <p>
+              Tendremos el placer de recibirles a partir de las 17:30
+              para comenzar juntos esta hermosa celebración.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- FLORES -->
+        <img class="cage" src="assets/flowers.svg" alt="">
+
+
+        <!-- JAULA -->
+        <div class="chandelier-stage" aria-hidden="true">
+          <img src="assets/cage.svg" class="chandelier-svg" alt="">
+        </div>
+
+
+        <!-- CUENTA ATRÁS -->
+        <div class="countdown">
+
+          <div class="count-box reveal-up">
+            <span id="days">00</span>
+            <small>Días</small>
+          </div>
+
+          <div class="count-box reveal-up">
+            <span id="hours">00</span>
+            <small>Horas</small>
+          </div>
+
+          <div class="count-box reveal-up">
+            <span id="minutes">00</span>
+            <small>Minutos</small>
+          </div>
+
+          <div class="count-box reveal-up">
+            <span id="seconds">00</span>
+            <small>Segundos</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- LUGAR + MAPA -->
+    <!-- ═══════════════════════════════════════ -->
+
+    <section class="section section-dark section-with-banner">
+
+      <div class="full-banner reveal-zoom">
+
+        <img src="assets/lieu.png" alt="Lugar de la celebración" class="section-banner-image">
+
+      </div>
+
+
+      <div class="container">
+
+        <div class="cards-grid">
+
+          <article class="card card-dark reveal-left">
+
+            <p class="card-subtitle">
+              <i class="fa-solid fa-location-dot"></i>
+              Dirección
+            </p>
+
+            <h3>
+              Lugar de la celebración
+            </h3>
+
+            <p class="card-line">
+              <i class="fa-solid fa-building"></i>
+              Qasr Al Nada, Marruecos
+            </p>
+
+            <p class="card-line">
+              <i class="fa-solid fa-city"></i>
+              Tánger, Marruecos
+            </p>
+
+          </article>
+
+
+          <article class="card card-dark reveal-right">
+
+            <p class="card-subtitle">
+              <i class="fa-solid fa-map"></i>
+              Navegación
+            </p>
+
+            <h3>
+              Google Maps
+            </h3>
+
+            <p class="card-line">
+              <i class="fa-solid fa-route"></i>
+              Accede fácilmente a la ubicación de la celebración.
+            </p>
+
+            <a class="text-link" href="https://maps.app.goo.gl/E3NeAVD587JYv7nr5" target="_blank" rel="noopener">
+
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              Abrir la ruta
+
+            </a>
+
+          </article>
+
+        </div>
+
+
+        <div class="map-box reveal-up">
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d788.0371777549858!2d-5.3422857714991085!3d35.57573789828171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b4300308f6967%3A0xb037ea7a2c373e61!2sQasr%20alnada!5e1!3m2!1sfr!2sma!4v1790445902521!5m2!1sfr!2sma"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- CÓDIGO DE VESTIMENTA -->
+    <!-- ═══════════════════════════════════════ -->
+
+    <section class="section section-light section-with-banner">
+
+      <div class="full-banner reveal-zoom">
+
+        <img src="assets/lumiere.png" alt="Ambiente elegante de la celebración" class="section-banner-image">
+
+      </div>
+
+
+      <div class="container">
+
+        <div class="section-head center reveal-up">
+
+          <p class="section-label">
+            Código de vestimenta
+          </p>
+
+          <h2 class="section-title">
+            Vestimenta sugerida
+          </h2>
+
+          <p class="section-arabic" dir="rtl">
+            اللباس التقليدي الأنيق
+          </p>
+
+        </div>
+
+
+        <div class="cards-grid dress-grid">
+
+          <!-- MUJERES -->
+
+          <article class="card card-light reveal-left">
+
+            <p class="card-subtitle">
+              <i class="fa-solid fa-gem"></i>
+              Para ella
+            </p>
+
+            <h3>
+              Vestimenta femenina
+            </h3>
+
+            <p class="text-with-icon">
+
+              <i class="fa-solid fa-star"></i>
+
+              <span>
+                Caftán, takchita o vestido elegante,
+                según tu estilo.
+              </span>
+
+            </p>
+
+          </article>
+
+
+          <!-- HOMBRES -->
+
+          <article class="card card-light reveal-right">
+
+            <p class="card-subtitle">
+              <i class="fa-solid fa-user-tie"></i>
+              Para él
+            </p>
+
+            <h3>
+              Vestimenta masculina
+            </h3>
+
+            <p class="text-with-icon">
+
+              <i class="fa-solid fa-star-and-crescent"></i>
+
+              <span>
+                Jabador, djellaba elegante o vestimenta tradicional
+                refinada para la ocasión.
+              </span>
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- PIE DE PÁGINA -->
+    <!-- ═══════════════════════════════════════ -->
+
+    <footer class="footer">
+
+      <div class="container center narrow reveal-up">
+
+        <div class="footer-divider"></div>
+
+        <h1 class="intro-title">
+          Chada de Sarah
+        </h1>
+
+        <p class="footer-text">
+          Con amor, alegría y gratitud, estaremos encantados de celebrar
+          este momento tan especial rodeados de nuestra familia y amigos.
+        </p>
+
+        <p class="footer-arabic" dir="rtl">
+          حضوركم يسعدنا ويزيد فرحتنا
+        </p>
+
+        <div class="footer-divider footer-divider-bottom"></div>
+
+        <p class="footer-copyright">
+          © 2026 Royal Digital Invite — Todos los derechos reservados.
+        </p>
+
+      </div>
+
+    </footer>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+
+  <script type="module"
+    src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495"
+    integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg=="
+    data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
