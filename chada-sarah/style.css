@@ -1701,3 +1701,117 @@ body.butterflies-active .butterflies-layer {
     animation: none !important;
   }
 }
+
+/* ========================= */
+/*      BOUTON MUSIQUE       */
+/* ========================= */
+
+.music-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  width: 52px;
+  height: 52px;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--forest);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.1rem;
+
+  cursor: pointer;
+
+  z-index: 10000;
+
+  box-shadow: 0 10px 30px rgba(68, 94, 71, 0.20);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.music-toggle:hover {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.music-toggle.is-playing {
+  animation: musicPulse 2s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 10px 30px rgba(68, 94, 71, 0.20);
+  }
+
+  50% {
+    box-shadow: 0 10px 35px rgba(192, 152, 144, 0.45);
+  }
+}
+
+@media (max-width: 480px) {
+  .music-toggle {
+    width: 46px;
+    height: 46px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 1rem;
+  }
+}
+
+.music-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  width: 52px;
+  height: 52px;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--forest);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.1rem;
+  cursor: pointer;
+
+  z-index: 10000;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: scale(0.7);
+
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease,
+    transform 0.5s ease;
+}
+
+/* Apparaît après ouverture de l'enveloppe */
+body.intro-finished .music-toggle,
+body.intro-started .music-toggle {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}

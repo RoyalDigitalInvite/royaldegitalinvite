@@ -85,10 +85,6 @@ function showScene2() {
     initRevealAnimations();
   });
 }
-
-/**
- * Lanza la introducción
- */
 function startIntro() {
   if (introStarted || !scene1 || !video1) return;
 
@@ -96,8 +92,11 @@ function startIntro() {
 
   scene1.classList.add("is-started");
 
-  // 🦋 Las mariposas aparecen en cuanto se abre el sobre
+  /* 🦋 Papillons */
   document.body.classList.add("butterflies-active");
+
+  /* 🎵 Afficher l'icône musique après ouverture */
+  document.body.classList.add("intro-started");
 
   activateFloatingLogo();
   startMusic();
@@ -115,7 +114,6 @@ function startIntro() {
     });
   }
 }
-
 /**
  * Fin del vídeo:
  * se congela en la imagen final Y se mantiene visible
@@ -257,38 +255,55 @@ window.addEventListener("pageshow", resumeMusicOnReturn);
 /* ========================= */
 /* Reutiliza bgMusic e introStarted ya declarados arriba.
    No vuelve a declararlos. */
+/* ========================= */
+/*      MUSIQUE + ICÔNE      */
+/* ========================= */
 
 const musicToggle = document.getElementById("musicToggle");
 
-let userMuted = false;        /* el usuario ha silenciado la música a mano */
-let musicShouldPlay = false;  /* la música debe sonar (después del primer gesto) */
+let userMuted = false;
+let musicWasPlayingBeforeLeave = false;
 
-/* --- Icono: refleja el estado real --- */
+
+/* --- Icône --- */
 function setMusicIcon(isPlaying) {
   if (!musicToggle) return;
 
   musicToggle.classList.toggle("is-playing", isPlaying);
-  musicToggle.setAttribute("aria-pressed", isPlaying ? "true" : "false");
+
+  musicToggle.setAttribute(
+    "aria-pressed",
+    isPlaying ? "true" : "false"
+  );
+
   musicToggle.setAttribute(
     "aria-label",
-    isPlaying ? "Pausar la música" : "Reproducir la música"
+    isPlaying
+      ? "Pausar la música"
+      : "Reproducir la música"
   );
 
   const icon = musicToggle.querySelector("i");
+
   if (icon) {
-    icon.className = isPlaying ? "fa-solid fa-pause" : "fa-solid fa-music";
+    icon.className = isPlaying
+      ? "fa-solid fa-pause"
+      : "fa-solid fa-music";
   }
 }
 
-/* --- Lectura protegida contra el bloqueo de autoplay --- */
+
+/* --- Démarrer la musique --- */
 function playMusic() {
-  if (!bgMusic) return;
+  if (!bgMusic || userMuted) return;
 
   const promise = bgMusic.play();
 
   if (promise !== undefined) {
     promise
-      .then(() => setMusicIcon(true))
+      .then(() => {
+        setMusicIcon(true);
+      })
       .catch((err) => {
         console.log("Reproducción de audio bloqueada:", err);
         setMusicIcon(false);
@@ -298,91 +313,138 @@ function playMusic() {
   }
 }
 
-/* --- El usuario pulsa el icono --- */
+
+/* --- Bouton Play / Pause --- */
 function toggleMusic() {
   if (!bgMusic) return;
 
-  if (bgMusic.paused || bgMusic.ended) {
-    /* Volver a poner la música: se cancela el silencio manual */
-    userMuted = false;
-    musicShouldPlay = true;
+  if (bgMusic.paused) {
 
-    if (bgMusic.ended || bgMusic.currentTime >= (bgMusic.duration || 0)) {
-      bgMusic.currentTime = 0;
-    }
+    // L'utilisateur veut relancer
+    userMuted = false;
 
     playMusic();
+
   } else {
-    /* Silencio manual: no se reiniciará al volver */
+
+    // L'utilisateur coupe volontairement
     userMuted = true;
-    musicShouldPlay = false;
+
     bgMusic.pause();
+
     setMusicIcon(false);
   }
 }
+
 
 if (musicToggle) {
   musicToggle.addEventListener("click", toggleMusic);
 }
 
-/* --- Pausa al salir de la página --- */
+
+/* ========================= */
+/*    QUITTER LA PAGE        */
+/* ========================= */
+
 function pauseMusicOnLeave() {
-  if (!bgMusic || bgMusic.paused) return;
-  bgMusic.pause();
-  setMusicIcon(false);
-}
-
-/* --- Reinicia la música DESDE EL PRINCIPIO al volver --- */
-function restartMusicOnReturn() {
   if (!bgMusic) return;
-  if (userMuted) return;         /* respeta el silencio manual */
-  if (!musicShouldPlay) return;  /* la música aún no se ha iniciado */
-  if (!bgMusic.paused) return;   /* ya está sonando: no la tocamos */
 
-  bgMusic.currentTime = 0;
-  playMusic();
-}
+  /*
+   * On mémorise si la musique jouait
+   * avant que l'utilisateur quitte.
+   */
+  musicWasPlayingBeforeLeave =
+    !bgMusic.paused && !bgMusic.ended;
 
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden) {
-    pauseMusicOnLeave();
-  } else {
-    restartMusicOnReturn();
+  if (musicWasPlayingBeforeLeave) {
+    bgMusic.pause();
+    setMusicIcon(false);
   }
-});
-
-/* Caché « atrás/adelante » del móvil (BFCache) */
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    restartMusicOnReturn();
-  }
-});
-
-window.addEventListener("pagehide", pauseMusicOnLeave);
-window.addEventListener("focus", restartMusicOnReturn);
-
-/* --- Primer gesto del usuario: abre la música si el navegador la bloqueó --- */
-function markMusicStarted() {
-  musicShouldPlay = true;
 }
 
-if (introTrigger) {
-  introTrigger.addEventListener("click", markMusicStarted);
-  introTrigger.addEventListener("keydown", markMusicStarted);
-}
 
-function unlockMusicOnFirstGesture() {
-  if (!musicShouldPlay || !bgMusic || userMuted) return;
-  if (bgMusic.paused) {
-    bgMusic.currentTime = 0;
+/* ========================= */
+/*    REVENIR À LA PAGE      */
+/* ========================= */
+
+function resumeMusicOnReturn() {
+  if (!bgMusic) return;
+
+  /*
+   * Si l'utilisateur avait volontairement
+   * coupé la musique, on ne la relance pas.
+   */
+  if (userMuted) return;
+
+  /*
+   * Si la musique jouait avant de partir,
+   * on la relance automatiquement.
+   */
+  if (musicWasPlayingBeforeLeave) {
     playMusic();
   }
+
+  musicWasPlayingBeforeLeave = false;
 }
 
-document.addEventListener("pointerdown", unlockMusicOnFirstGesture);
-document.addEventListener("keydown", unlockMusicOnFirstGesture);
 
-/* --- Estado inicial del icono --- */
+/* ========================= */
+/*   CHANGEMENT D'ONGLET     */
+/* ========================= */
+
+document.addEventListener("visibilitychange", () => {
+
+  if (document.hidden) {
+
+    pauseMusicOnLeave();
+
+  } else {
+
+    resumeMusicOnReturn();
+
+  }
+
+});
+
+
+/* ========================= */
+/*     FOCUS / BLUR           */
+/* ========================= */
+
+window.addEventListener("blur", () => {
+  pauseMusicOnLeave();
+});
+
+window.addEventListener("focus", () => {
+  resumeMusicOnReturn();
+});
+
+
+/* ========================= */
+/*     MOBILE / BFCache       */
+/* ========================= */
+
+window.addEventListener("pagehide", () => {
+  pauseMusicOnLeave();
+});
+
+window.addEventListener("pageshow", (event) => {
+
+  if (event.persisted) {
+    resumeMusicOnReturn();
+  }
+
+});
+
+
+/* ========================= */
+/*      ÉTAT INITIAL         */
+/* ========================= */
+
 document.addEventListener("DOMContentLoaded", () => {
-  setMusicIcon(bgMusic ? !bgMusic.paused : false);
+
+  if (bgMusic) {
+    setMusicIcon(!bgMusic.paused);
+  }
+
 });
