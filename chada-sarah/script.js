@@ -8,9 +8,7 @@ const videoEndFrame = document.getElementById("videoEndFrame");
 let revealObserverInitialized = false;
 let introStarted = false;
 
-/**
- * Inicializa las animaciones de aparición al hacer scroll
- */
+
 function initRevealAnimations() {
   if (revealObserverInitialized) return;
 
