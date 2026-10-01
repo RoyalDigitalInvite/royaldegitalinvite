@@ -1,50 +1,223 @@
+/* ============================================================
+   🎨 PALETTE BOUQUET FLORAL — Nada & Abdellah
+   À coller tout en bas de style.css (remplace les anciens rose)
+   ============================================================ */
+
 :root {
-  /* ════════════════════════════════════════ */
-  /*   PALETTE V3 — Rose EN ACCENT, beige chaud dominant, vert sauge visible     */
-  /* ════════════════════════════════════════ */
+  --rose-poudre: #f2dce0;
+  /* fond dominant */
+  --rose-romantique: #c986a4;
+  /* roses principaux */
+  --vieux-rose: #bc7ca0;
+  /* coral / pêche */
+  --ivoire: #e8e4e6;
+  /* fleurs blanches */
+  --lavande: #9d6cb2;
+  /* accents mauves */
+  --vert-sauge: #5d6b49;
+  /* vert discret (eucalyptus) */
+  --ombre: #5c405f;
+  /* profondeur */
 
-  /* Rose poudré — adouci, moins saturé, joue le rôle d'accent */
-  --rose: #EFB8C4;
-  --rose-soft: rgba(239, 184, 196, 0.65);
-  --rose-light: #F5D6DD;
-  --rose-pale: #FBE6EC;
-  --rose-deep: #C98AA0;
-  --rose-ink: #A86A82;
-  --rose-muted: rgba(201, 138, 160, 0.40);
-  --rose-dust: #E2B0BA;
+  /* Ombres & dégradés dérivés */
+  --shadow-soft: 0 10px 30px rgba(92, 64, 95, 0.18);
+  --shadow-card: 0 18px 45px rgba(201, 134, 164, 0.25);
+  --gold-glow: 0 0 24px rgba(201, 134, 164, 0.45);
 
-  /* Beige chaud & ivoire — fond dominant, plus chaleureux */
-  --cream: #F5ECDC;
-  --cream-pale: #FBF4E6;
-  --cream-soft: rgba(251, 244, 230, 0.92);
-  --cream-muted: rgba(251, 244, 230, 0.66);
-  --cream-faint: rgba(217, 197, 168, 0.18);
-
-  /* Vert sauge — discret mais visible (contours déco, icônes secondaires) */
-  --bx-main: #8DA582;
-  --bx-mid: #779275;
-  --bx-rich: #5E7859;
-  --bx-warm: #9BAD8E;
-  --bx-soft: rgba(141, 165, 130, 0.35);
-  --bx-glow: rgba(141, 165, 130, 0.20);
-
-  /* Beige doré — touche complémentaire, sépare le rose du vert */
-  --beige-deep: #C9A983;
-  --beige-soft: rgba(201, 169, 131, 0.35);
-
-  /* Encre — plus douce, brun-rosé léger */
-  --ink-deep: #6A5260;
-  --ink-body: #826678;
-  --ink-soft: rgba(106, 82, 96, 0.78);
-  --ink-muted: rgba(106, 82, 96, 0.52);
-
-  /* Ombres — teintes beige/chaud, plus diffus et moins agressives */
-  --shadow: 0 14px 36px rgba(170, 140, 120, 0.16);
-  --shadow-sm: 0 5px 16px rgba(170, 140, 120, 0.12);
-  --radius: 22px;
-  --transition: all 0.38s ease;
-  --container: 1120px;
+  --bg-degrade: radial-gradient(ellipse at top,
+      var(--rose-poudre) 0%,
+      var(--ivoire) 55%,
+      var(--rose-romantique) 130%);
 }
+
+/* ---------- Fond global + arabesques ---------- */
+body,
+.intro-screen,
+.main-content {
+  background: var(--bg-degrade);
+  color: var(--ombre);
+}
+
+.arabesque-bg {
+  background: transparent;
+}
+
+.arabesque-orb {
+  background: radial-gradient(circle at center,
+      var(--rose-poudre) 0%,
+      var(--vieux-rose) 70%,
+      transparent 100%);
+  opacity: 0.55;
+  filter: blur(60px);
+}
+
+.arabesque-orb.orb-1 {
+  background: radial-gradient(circle at center, var(--rose-poudre), var(--rose-romantique) 60%, transparent 100%);
+}
+
+.arabesque-orb.orb-2 {
+  background: radial-gradient(circle at center, var(--lavande), var(--vieux-rose) 60%, transparent 100%);
+  opacity: 0.35;
+}
+
+.arabesque-orb.orb-3 {
+  background: radial-gradient(circle at center, var(--ivoire), var(--rose-poudre) 60%, transparent 100%);
+  opacity: 0.45;
+}
+
+/* ---------- Boutons royaux ---------- */
+.btn-royal {
+  background: linear-gradient(135deg, var(--rose-romantique), var(--vieux-rose));
+  color: var(--ivoire);
+  box-shadow: var(--shadow-card), var(--gold-glow);
+  border: 1px solid rgba(201, 134, 164, 0.4);
+}
+
+.btn-royal:hover {
+  background: linear-gradient(135deg, var(--vieux-rose), var(--ombre));
+  transform: translateY(-2px);
+  box-shadow: 0 22px 55px rgba(92, 64, 95, 0.35);
+}
+
+.btn-royal-outline {
+  background: rgba(242, 220, 224, 0.35);
+  color: var(--rose-romantique);
+  border: 1.5px solid var(--rose-romantique);
+}
+
+.btn-royal-outline:hover {
+  background: var(--rose-romantique);
+  color: var(--ivoire);
+}
+
+/* ---------- Cartes décoratives (lieu & dress) ---------- */
+.lieu-card,
+.dress-card {
+  background: linear-gradient(160deg, var(--ivoire) 0%, var(--rose-poudre) 100%);
+  border: 1px solid rgba(201, 134, 164, 0.35);
+  box-shadow: var(--shadow-card);
+  margin-top: 30px;
+}
+
+.lieu-card:hover,
+.dress-card:hover {
+  box-shadow: 0 22px 55px rgba(157, 108, 178, 0.30);
+  /* la lavande fait son entrée */
+  transform: translateY(-4px);
+}
+
+.lieu-card-icon,
+.dress-icon-wrap {
+  background: radial-gradient(circle at center, var(--rose-poudre), var(--vieux-rose));
+  color: var(--ivoire);
+  box-shadow: var(--gold-glow);
+}
+
+.lieu-card h3,
+.dress-card h3 {
+  color: var(--ombre);
+}
+
+.lieu-card p,
+.dress-card p {
+  color: var(--ombre);
+  opacity: 0.85;
+}
+
+/* Petit accent vert sauge pour ne pas perdre la touche eucalyptus 🌿 */
+.dress-motif,
+.lieu-card-deco {
+  color: var(--vert-sauge);
+  opacity: 0.55;
+}
+
+/* ---------- Countdown ---------- */
+.count-inner {
+  background: linear-gradient(180deg, var(--ivoire), var(--rose-poudre));
+  color: var(--ombre);
+  border: 1px solid rgba(201, 134, 164, 0.3);
+  box-shadow: inset 0 0 14px rgba(201, 134, 164, 0.15);
+}
+
+.count-block small,
+.countdown-label {
+  color: var(--rose-romantique);
+}
+
+.count-sep {
+  color: var(--lavande);
+}
+
+/* ---------- Titres & ornements ---------- */
+.section-khat,
+.date-num,
+.footer-names {
+  color: var(--rose-romantique);
+  background: linear-gradient(120deg, var(--rose-romantique), var(--vieux-rose), var(--lavande));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ornament-royal span,
+.footer-ornament svg line,
+.footer-ornament svg circle {
+  background: linear-gradient(90deg, transparent, var(--rose-romantique), transparent);
+  stroke: var(--rose-romantique);
+}
+
+.ornament-royal i,
+.sep-center {
+  color: var(--lavande);
+}
+
+/* ---------- Toggle musique ---------- */
+.music-toggle {
+  background: rgba(242, 220, 224, 0.65);
+  color: var(--rose-romantique);
+  border: 1px solid var(--rose-romantique);
+  backdrop-filter: blur(8px);
+}
+
+.music-toggle:hover {
+  background: var(--rose-romantique);
+  color: var(--ivoire);
+  box-shadow: var(--gold-glow);
+}
+
+/* ---------- RSVP ---------- */
+.rsvp-status.is-success {
+  background: rgba(201, 134, 164, 0.15);
+  color: var(--ombre);
+  border-left: 4px solid var(--rose-romantique);
+}
+
+.rsvp-status.is-error {
+  background: rgba(157, 108, 178, 0.15);
+  color: var(--ombre);
+  border-left: 4px solid var(--lavande);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: linear-gradient(180deg, transparent, var(--rose-poudre) 60%, var(--vieux-rose) 130%);
+  color: var(--ombre);
+}
+
+.footer-arabic,
+.footer-text,
+.footer-copy {
+  color: var(--ombre);
+  opacity: 0.8;
+}
+
+/* ---------- Hover / focus global ---------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--lavande);
+  outline-offset: 3px;
+}
+
 
 * {
   margin: 0;
@@ -59,7 +232,7 @@ html {
 
 body {
   font-family: "Tajawal", "Amiri", "Crimson Pro", "Georgia", serif;
-  background: #efebe2;
+  background: var(--white);
   color: var(--ink-deep);
   line-height: 1.75;
   overflow-x: hidden;
@@ -94,7 +267,7 @@ main {
 .main-content {
   position: relative;
   z-index: 2;
-  background: #efebe2;
+  background: var(--white);
   animation: mainFade 1.2s ease;
 }
 
@@ -317,10 +490,19 @@ body.intro-finished .music-toggle {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(217, 197, 168, 0.35) 0%, transparent 65%),
-    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(239, 184, 196, 0.30) 0%, transparent 60%),
-    #efebe2;
+    radial-gradient(ellipse 65% 45% at 15% 15%,
+      rgba(196, 178, 201, 0.16) 0%,
+      transparent 65%),
+    radial-gradient(ellipse 70% 50% at 85% 20%,
+      rgba(232, 209, 213, 0.25) 0%,
+      transparent 65%),
+    radial-gradient(ellipse 70% 50% at 50% 100%,
+      rgba(167, 174, 145, 0.08) 0%,
+      transparent 65%),
+    var(--white);
+
   padding: 80px 0 120px;
   text-align: center;
   overflow: hidden;
@@ -382,6 +564,8 @@ body.intro-finished .music-toggle {
   text-shadow: 0 2px 18px rgba(170, 140, 120, 0.22);
   letter-spacing: 0.02em;
 }
+
+
 
 .names-amp {
   font-family: "Pinyon Script", cursive;
