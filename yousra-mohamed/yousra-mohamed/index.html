@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دعوة زفاف | يسرى ومحمد</title>
+<!-- Open Graph / Link Preview -->
+<meta property="og:title" content="دعوة زفاف | يسرى ومحمد">
+<meta property="og:description" content="يسرّنا دعوتكم لمشاركتنا فرحتنا والاحتفال معنا بهذه المناسبة الجميلة.">
+
+<meta property="og:image" content="https://yousra-mohamed.pages.dev/assets/enveloppe.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta property="og:url" content="https://yousra-mohamed.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="دعوة زفاف | يسرى ومحمد">
+
+<!-- Twitter / Social Preview -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="دعوة زفاف | يسرى ومحمد">
+<meta name="twitter:description" content="يسرّنا دعوتكم لمشاركتنا فرحتنا والاحتفال معنا بهذه المناسبة الجميلة.">
+<meta name="twitter:image" content="https://yousra-mohamed.pages.dev/assets/enveloppe.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&amp;family=Tajawal:wght@300;400;500;700;800&amp;family=Aref+Ruqaa:wght@400;700&amp;family=Amiri:wght@400;700&amp;display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="intro-active">
+
+  <!-- الموسيقى -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- زر التحكم في الموسيقى (أسفل اليمين) -->
+  <button id="musicToggle" class="music-toggle" type="button"
+    aria-label="تشغيل أو إيقاف الموسيقى" aria-pressed="true" title="الموسيقى">
+    <span class="music-toggle-ring"></span>
+    <i class="fa-solid fa-volume-high"></i>
+  </button>
+
+  <!-- الشعار المتحرك -->
+  <div id="floatingLogo" class="floating-logo" aria-hidden="true">
+    <img src="assets/royaldigitalinvite.svg" alt="الدعوات الرقمية الملكية">
+  </div>
+
+  <!-- الغلاف -->
+  <section id="scene1" class="intro-screen" aria-label="افتح الدعوة">
+
+    <img id="videoEndFrame" class="video-end-frame" src="assets/image2.png" alt="ديكور حفل زفاف يسرى ومحمد">
+
+    <div id="introTrigger" class="intro-trigger" role="button" tabindex="0" aria-label="افتح الدعوة">
+      <img src="assets/enveloppe.png" alt="دعوة زفاف يسرى ومحمد" class="intro-cover">
+    </div>
+
+  </section>
+
+  <!-- المحتوى الرئيسي -->
+  <main id="scene2" class="hidden main-content">
+
+    <!-- العد التنازلي -->
+    <section id="countdownSection" class="section section-light">
+      <div class="container center narrow">
+
+        <div class="ornament reveal-up">
+          <span class="ornament-line"></span>
+          <i class="fa-solid fa-heart"></i>
+          <span class="ornament-line"></span>
+        </div>
+
+        <div class="section-head reveal-up">
+          <p class="section-label">يومنا المميز</p>
+          <h2 class="section-title">لقد بدأ العدّ التنازلي</h2>
+          <p class="section-khat">حفل جميل ينتظرنا قريباً</p>
+          <p class="section-text">
+            كل يوم يمرّ يقرّبنا أكثر من حفل زفاف مليء بالحب والفرح ولحظات لا تُنسى.
+          </p>
+        </div>
+
+        <div class="event-highlight reveal-up">
+          <div class="event-highlight-icon">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+          <div class="event-highlight-content">
+            <span class="event-highlight-label">موعد الحفل</span>
+ 
+           <strong>ابتداءً من الساعة السادسة مساءً (18:00)</strong>
+
+            <p>
+              يسعدنا استقبالكم ابتداءً من الساعة السادسة مساءً لنبدأ معاً هذا الحفل الجميل.
+              <br>
+              <span class="date-line"><i class="fa-regular fa-calendar-days"></i> 5 يناير 2027</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="countdown">
+          <div class="count-box reveal-up">
+            <span id="days">00</span>
+            <small>أيام</small>
+          </div>
+          <div class="count-box reveal-up">
+            <span id="hours">00</span>
+            <small>ساعات</small>
+          </div>
+          <div class="count-box reveal-up">
+            <span id="minutes">00</span>
+            <small>دقائق</small>
+          </div>
+          <div class="count-box reveal-up">
+            <span id="seconds">00</span>
+            <small>ثوانٍ</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- المكان + الموقع -->
+    <section class="section section-dark section-with-banner">
+      <div class="full-banner reveal-zoom">
+        <img src="assets/image3.png" alt="مكان حفل الزفاف" class="section-banner-image">
+        <div class="banner-overlay"></div>
+      </div>
+
+      <div class="section-heading center reveal-fade">
+        <div class="ornament-royal light">
+          <span></span><i class="fa-solid fa-location-dot"></i><span></span>
+        </div>
+        <p class="section-vibes light">شاركونا فرحتنا</p>
+        <p class="section-khat light">مكان الحفل واتجاهات الوصول</p>
+        <h2 class="section-titre light">المكان</h2>
+        <p class="section-sous light">موقع الحفل ومعلومات الوصول إلينا بسهولة.</p>
+      </div>
+
+      <div class="container">
+        <div class="cards-grid">
+          <article class="card card-dark reveal-left">
+            <p class="card-subtitle">
+              <i class="fa-solid fa-location-dot"></i> العنوان
+            </p>
+            <h3>قصر ضيافة</h3>
+            <p class="card-line">
+              <i class="fa-solid fa-building"></i>
+             قصر الضيافة  طنجة البالية
+            </p>
+            <p class="card-line">
+              <i class="fa-solid fa-city"></i>
+              طنجة، المغرب
+            </p>
+          </article>
+
+          <article class="card card-dark reveal-right">
+            <p class="card-subtitle">
+              <i class="fa-solid fa-map"></i> الملاحة
+            </p>
+            <h3>خرائط جوجل</h3>
+            <p class="card-line">
+              <i class="fa-solid fa-route"></i>
+              يمكنكم الوصول بسهولة إلى مكان الحفل.
+            </p>
+            <a class="text-link" href="https://www.google.com/maps/place/Kasr+Diafa/@35.7724275,-5.7740678,17z"
+              target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              افتح الاتجاهات
+            </a>
+          </article>
+        </div>
+
+        <div class="map-box reveal-up">
+          <iframe src="https://www.google.com/maps?q=35.7724275,-5.7740678&z=17&output=embed" width="100%"
+            height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- معلومات مهمة -->
+    <section class="section section-info">
+
+      <div class="section-separator">
+        <div class="sep-line"></div>
+        <div class="sep-center">✦ ✦ ✦</div>
+        <div class="sep-line right"></div>
+      </div>
+
+      <div class="full-banner reveal-zoom">
+        <img src="assets/image4.png" alt="أجواء حفل الزفاف" class="section-banner-image">
+        <div class="banner-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="section-heading reveal-fade">
+          <div class="ornament-royal">
+            <span></span><i class="fa-solid fa-circle-check"></i><span></span>
+          </div>
+          <p class="section-vibes">شاركوا كل لحظة معنا</p>
+          <p class="section-khat">معلومات مهمة لضيوفنا الكرام</p>
+          <h2 class="section-titre">معلومات</h2>
+          <p class="section-sous">
+            بعض المعلومات المهمة لنعيش معاً هذه اللحظة الفريدة في أتمّ راحة وسكينة.
+          </p>
+        </div>
+
+        <div class="dress-grid">
+
+          <!-- البطاقة الأولى : الأطفال -->
+          <article class="dress-card reveal-left">
+            <div class="dress-card-top">
+              <div class="dress-icon-wrap icon-ban">
+                <i class="fa-solid fa-child-reaching"></i>
+              </div>
+              <span class="dress-tag">مع خالص شكرنا</span>
+            </div>
+            <h3>ممنوع جلب الأطفال</h3>
+            <p class="dress-text">
+              بكل محبة وتقدير، نأمل من ضيوفنا الكرام مشاركتنا هذه المناسبة السعيدة دون اصطحاب الأطفال،
+              شاكرين لكم حسن تفهّمكم وتعاونكم.
+            </p>
+            <p class="dress-text">
+              ولكي يستمتع الجميع بأمسيتنا الاستثنائية كاملةً، نرجو الحضور بدون الأطفال.
+            </p>
+            <div class="dress-motif" aria-hidden="true">✦</div>
+          </article>
+
+          <!-- البطاقة الثانية : التصوير -->
+          <article class="dress-card reveal-right">
+            <div class="dress-card-top">
+              <div class="dress-icon-wrap icon-ban">
+                <i class="fa-solid fa-camera-retro"></i>
+              </div>
+              <span class="dress-tag">لحظة خاصة</span>
+            </div>
+            <h3>حفل بدون تصوير</h3>
+            <p class="dress-text">
+              حفاظاً على خصوصية هذه المناسبة الجميلة، نرجو منكم التكرّم بعدم التصوير
+              أو تسجيل الفيديو أثناء الحفل.
+            </p>
+            <p class="dress-text">
+              ولكي يعيش الجميع كل لحظة بكامل انتباههم، نأمل الالتزام بذلك. شكراً لتفهّمكم.
+            </p>
+            <div class="dress-motif" aria-hidden="true">✦</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer class="footer">
+      <div class="container center narrow reveal-up">
+        <div class="footer-divider"></div>
+
+        <h1 class="intro-title">يسرى ومحمد</h1>
+
+        <p class="footer-text">
+          بمحبة وفرح وامتنان، يتشرّفنا أن نحتفل هذه اللحظة المميزة معكم.
+        </p>
+
+        <p class="footer-arabic">
+          حضوركم سيجعل يومنا أكثر جمالاً وبهجة
+        </p>
+
+        <div class="footer-divider footer-divider-bottom"></div>
+
+        <p class="footer-copy">© 2027 Royal Digital Invite — Tous droits réservés</p>
+
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
