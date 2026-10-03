@@ -248,20 +248,25 @@ function buildWhatsAppMessage(data) {
     ? "✅ *Je confirme ma présence avec grand plaisir*"
     : "❌ *Je ne pourrai malheureusement pas être présent(e)*";
 
+  // L'horaire n'a de sens que si l'invité(e) est présent(e)
+  const scheduleLine = data.attendance === "yes"
+    ? `\n🕕 *Horaire :* ${WEDDING_CONFIG.weddingTimeText}`
+    : "";
 
   const messageText = data.message
     ? `\n\n💌 *Message :*\n${data.message}` : "";
 
   const message =
-    `*🤍 Confirmation de présence — Mariage 🤍*
+    `*🤍 Confirmation de présence — Bienvenue à nos fiançailles  ${WEDDING_CONFIG.brideName} & ${WEDDING_CONFIG.groomName} 🤍*
 
 Salam ${WEDDING_CONFIG.brideName} & ${WEDDING_CONFIG.groomName} 💐
 
 👤 *Nom complet :* ${data.name}
- 
+
+${attendanceText}
+
 📍 *Lieu :* ${WEDDING_CONFIG.venue}
-📅 *Date :* ${WEDDING_CONFIG.weddingDayText}
-🕕 *Horaire :* ${WEDDING_CONFIG.weddingTimeText}${messageText}
+📅 *Date :* ${WEDDING_CONFIG.weddingDayText}${scheduleLine}${messageText}
 
 Avec mes meilleurs vœux de bonheur 💕`;
 
@@ -352,27 +357,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-/* ─── Arrêter la musique quand l'utilisateur quitte la page ─── */
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden && bgMusic) {
-    bgMusic.pause();
-    updateMusicIcon();
-  }
-});
-
-window.addEventListener("pagehide", () => {
-  if (bgMusic) {
-    bgMusic.pause();
-    updateMusicIcon();
-  }
-});
-
-window.addEventListener("blur", () => {
-  if (bgMusic) {
-    bgMusic.pause();
-    updateMusicIcon();
-  }
-});/* ─── Pause quand l'utilisateur quitte la page, reprise au retour ─── */
+/* ─── Gestion unique de la visibilité de la page ───
+   Pause de la musique quand l'utilisateur quitte l'onglet / la page,
+   reprise automatique quand il revient. Un seul listener cohérent
+   (suppression des listeners visibilitychange en double et du blur). */
 document.addEventListener("visibilitychange", () => {
   if (!bgMusic) return;
 
@@ -383,5 +371,12 @@ document.addEventListener("visibilitychange", () => {
     bgMusic.play()
       .then(() => updateMusicIcon())
       .catch(() => { });
+  }
+});
+
+window.addEventListener("pagehide", () => {
+  if (bgMusic) {
+    bgMusic.pause();
+    updateMusicIcon();
   }
 });
