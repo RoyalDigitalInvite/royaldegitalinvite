@@ -50,10 +50,22 @@
 
   <!-- INTRO -->
   <section id="scene1" class="intro-screen" aria-label="Ouverture de l'invitation">
+
+    <!-- IMAGE 2 = décor après ouverture -->
     <img id="videoEndFrame" class="video-end-frame" src="assets/image2.png" alt="Décor mariage Sarah et Amine">
+
+    <!-- ENVELOPPE -->
     <div id="introTrigger" class="intro-trigger" role="button" tabindex="0" aria-label="Ouvrir l'invitation">
       <img src="assets/enveloppe.png" alt="Invitation mariage Sarah et Amine" class="intro-cover">
     </div>
+
+    <!-- SWIPE SUR IMAGE 2 -->
+    <div id="swipeUpHintEnd" class="swipe-hint" aria-hidden="true">
+      <span class="swipe-hint-text">Glissez vers le haut</span>
+
+      <i class="fa-solid fa-chevron-up swipe-hint-arrow" aria-hidden="true"></i>
+    </div>
+
   </section>
 
   <main id="scene2" class="hidden main-content">
@@ -63,13 +75,14 @@
         <img class="cadre-image reveal-zoom" src="assets/cadre.svg" alt="Cadre royal décoratif">
       </div>
     </section>
-    <div class="chandelier-stage" aria-hidden="true">
-      <img src="assets/chandelier.svg" class="chandelier-svg" alt="">
-    </div>
+
     <!-- ══════════════════════════════════ -->
     <!--  HERO COUNTDOWN                    -->
     <!-- ══════════════════════════════════ -->
     <section id="countdownSection" class="section hero-section">
+      <div class="chandelier-stage" aria-hidden="true">
+        <img src="assets/chandelier.svg" class="chandelier-svg" alt="">
+      </div>
       <div class="hero-medallion" aria-hidden="true">
         <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" class="medallion-svg">
 
@@ -84,6 +97,7 @@
           </g>
 
         </svg>
+
       </div>
 
       <div class="container center narrow">
@@ -157,6 +171,12 @@
       <div class="full-banner reveal-zoom" style="margin-bottom: 0 !important;">
         <img src="assets/image3.png" alt="Lieu de la cérémonie" class="section-banner-image"
           style="object-position: center -10px;">
+      </div>
+
+      <!-- SWIPE DOWN — aparece al terminar el vídeo, sobre design1.png -->
+      <div id="swipeUpHintEnd" class="swipe-hint" aria-hidden="true">
+        <span class="swipe-hint-text">Glissez vers le haut</span>
+        <i class="fa-solid fa-chevron-down swipe-hint-arrow" aria-hidden="true"></i>
       </div>
 
       <div class="container">
