@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دعوة زفاف | خديجة &amp; أنس</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="intro-active">
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="arabesque-bg" aria-hidden="true">
+    <div class="arabesque-orb orb-1"></div>
+    <div class="arabesque-orb orb-2"></div>
+    <div class="arabesque-orb orb-3"></div>
+
+    <svg class="pattern-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="zellij" x="0" y="0" width="72" height="72" patternUnits="userSpaceOnUse">
+          <path d="M36 6 L48 24 L66 24 L52 36 L58 56 L36 44 L14 56 L20 36 L6 24 L24 24 Z" fill="none"
+            stroke="rgba(188,163,116,0.12)" stroke-width="1" />
+          <path d="M36 16 L44 28 L56 28 L46 36 L50 48 L36 42 L22 48 L26 36 L16 28 L28 28 Z" fill="none"
+            stroke="rgba(156,112,72,0.10)" stroke-width="0.8" />
+          <circle cx="36" cy="36" r="3" fill="none" stroke="rgba(188,163,116,0.10)" stroke-width="0.7" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#zellij)" />
+    </svg>
+  </div>
+
+  <button id="musicToggle" class="music-toggle" aria-label="إيقاف الموسيقى" type="button">
+    <i id="musicIcon" class="fa-solid fa-volume-high"></i>
+  </button>
+
+  <!-- ═══ الشاشة الافتتاحية ═══ -->
+  <section id="scene1" class="intro-screen" aria-label="افتتاح الدعوة">
+    <img id="videoEndFrame" class="video-end-frame" src="assets/image2.png" alt="ديكور زفاف خديجة وأنس">
+
+    <div id="introTrigger" class="intro-trigger" role="button" tabindex="0" aria-label="اضغط لفتح الدعوة">
+      <img src="assets/enveloppe.png" alt="دعوة زفاف خديجة وأنس" class="intro-cover">
+    </div>
+  </section>
+
+  <main id="scene2" class="hidden main-content">
+
+    <section class="cadre-section" aria-label="إطار مزخرف">
+      <div class="container center">
+        <img class="cadre-image reveal-zoom" src="assets/cadre.svg" alt="إطار ملكي مزخرف">
+                  
+      </div>
+    </section>
+
+    <!-- ═══ البطاقة الرئيسية ═══ -->
+    <section id="countdownSection" class="section hero-section">
+      <div class="hero-medallion" aria-hidden="true">
+        <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" class="medallion-svg">
+          <g transform="translate(160,160)">
+            <polygon points="0,-104 24,-38 98,-34 42,14 62,92 0,50 -62,92 -42,14 -98,-34 -24,-38"
+              fill="rgba(188,163,116,0.05)" stroke="rgba(188,163,116,0.28)" stroke-width="1.5" />
+            <polygon points="0,104 -24,38 -98,34 -42,-14 -62,-92 0,-50 62,-92 42,-14 98,34 24,38"
+              fill="rgba(188,163,116,0.03)" stroke="rgba(188,163,116,0.18)" stroke-width="1.2" />
+            <circle cx="0" cy="0" r="80" fill="none" stroke="rgba(188,163,116,0.18)" stroke-width="1.2" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="container center narrow">
+        <p class="hero-quote reveal-fade">أهلاً بكم في يومنا الكبير</p>
+
+        <div class="hero-names reveal-fade">
+          <h1 class="names-script">خديجة<span class="names-amp">&amp;</span> أنس</h1>
+        </div>
+
+        <div class="hero-divider reveal-fade">
+          <span class="divider-wing"></span>
+          <span class="divider-heart">✦</span>
+          <span class="divider-wing"></span>
+        </div>
+
+        <p class="hero-subtitle reveal-fade">
+          بكل فرح وسرور، نتشرّف بدعوتكم لحضور حفل زفافنا في أجواء دافئة
+          تملؤها المحبة والبهجة.
+        </p>
+
+        <div class="event-date-block reveal-fade">
+          <div class="date-pillar">
+            <span class="date-day">الجمعة</span>
+            <span class="date-num">23</span>
+            <span class="date-month">أكتوبر 2026</span>
+          </div>
+
+          <div class="date-divider-v"></div>
+
+          <div class="date-pillar">
+            <i class="fa-regular fa-clock date-icon"></i>
+            <span class="date-num">17 <small>h00</small></span>
+            <span class="date-month">حفل الاستقبال</span>
+          </div>
+        </div>
+
+        <div class="presence-notice reveal-fade">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>المرجو التفضل بالحضور على الساعة الخامسة مساءً بالضبط
+</span>
+        </div>
+
+     
+
+        <div class="countdown-wrapper reveal-fade">
+          <p class="countdown-label">موعدنا يقترب بإذن الله</p>
+          <div class="countdown">
+            <div class="count-block">
+              <div class="count-inner"><span id="days">00</span></div>
+              <small>أيام</small>
+            </div>
+            <div class="count-sep">:</div>
+            <div class="count-block">
+              <div class="count-inner"><span id="hours">00</span></div>
+              <small>ساعات</small>
+            </div>
+            <div class="count-sep">:</div>
+            <div class="count-block">
+              <div class="count-inner"><span id="minutes">00</span></div>
+              <small>دقائق</small>
+            </div>
+            <div class="count-sep">:</div>
+            <div class="count-block">
+              <div class="count-inner"><span id="seconds">00</span></div>
+              <small>ثوانٍ</small>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section><figure class="calendar-card reveal-fade" aria-label="تقويم الزفاف - الثلاثاء 29 ديسمبر 2026">
+        <img src="assets/calendrier.svg" alt="تقويم ديسمبر 2026 - الثلاثاء 29 ديسمبر 2026, تاريخ زفاف ندى وعبد الله"
+          loading="lazy" decoding="async" width="1024" height="1024">
+      </figure>
+
+    <!-- ═══ المكان ═══ -->
+    <section class="section section-lieu" style="padding-top: 0 !important;">
+      <div class="full-banner reveal-zoom" style="margin-bottom: 0 !important;">
+        <img src="assets/image3.png" alt="مكان الحفل" class="section-banner-image"
+          style="object-position: center -50px;">
+      </div>
+
+      <div class="container">
+        <div class="section-heading reveal-fade">
+          <div class="ornament-royal">
+            <span></span><i class="fa-solid fa-location-dot"></i><span></span>
+          </div>
+          <p class="section-vibes">ليلة لا تُنسى تنتظرنا</p>
+          <p class="section-khat">مكان الحفل والموقع</p>
+          <h2 class="section-titre">المكان والطريق</h2>
+        </div>
+
+        <div class="lieu-grid">
+          <article class="lieu-card reveal-right">
+            <div class="lieu-card-icon"><i class="fa-solid fa-building"></i></div>
+            <h3>Traiteur Afrah Souss</h3>
+            <p class="lieu-card-arabic">أفراح سوس لتنظيم الحفلات والاستقبالات</p>
+            <p><i class="fa-solid fa-city"></i> أكادير، المغرب</p>
+            <div class="lieu-card-deco"></div>
+          </article>
+
+          <article class="lieu-card reveal-left">
+            <div class="lieu-card-icon"><i class="fa-solid fa-map"></i></div>
+            <h3>الوصول إلى المكان</h3>
+            <p>يمكنكم الوصول بسهولة إلى الموقع عبر خرائط جوجل.</p>
+            <a class="btn-royal-outline"
+              href="https://www.google.com/maps/place/Traiteur+Afrah+Souss+:+Organisation+des+C%C3%A9r%C3%A9monies+%26+R%C3%A9ceptions/@30.3884552,-9.5188687,17z/data=!3m1!4b1!4m6!3m5!1s0xdb3c83f32d0cd11:0xe501caf3e75b9794!8m2!3d30.3884552!4d-9.5188687!16s%2Fg%2F11f08bfbn9?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-left-from-square"></i>
+              افتح المسار على الخريطة
+            </a>
+            <div class="lieu-card-deco"></div>
+          </article>
+        </div><div class="map-box reveal-fade" style="margin-bottom: 0 !important;">
+ <div class="map-box reveal-fade" style="margin-bottom: 0 !important;">
+  <iframe
+    src="https://www.google.com/maps?q=30.3884552,-9.5188687&output=embed"
+    width="100%"
+    height="100%"
+    style="border:0;"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+        <div class="full-banner reveal-zoom" style="margin-bottom: 0 !important;">
+          <img src="assets/image4.svg" alt="جو الحفل" class="section-banner-image">
+          <div class="banner-overlay"></div>
+        </div>
+
+</div>
+      </div>
+    </section>
+
+    <!-- ═══ الختام ═══ -->
+    <section class="section closing-section">
+      <div class="section-separator">
+        <div class="sep-line"></div>
+        <div class="sep-center">✦ ✦ ✦</div>
+        <div class="sep-line right"></div>
+      </div>
+      <div class="chandelier-stage" aria-hidden="true">
+        <img src="assets/chandelier.svg" class="chandelier-svg" alt="">
+      </div>
+
+      <div class="container center">
+        <div class="presence-notice reveal-fade">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>المرجو التفضل بالحضور على الساعة الخامسة مساءً بالضبط
+</span>
+        </div>
+       
+      </div>
+
+      <!-- ═══ التذييل ═══ -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-ornament" aria-hidden="true">
+            <svg viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0" y1="15" x2="120" y2="15" stroke="rgba(188,163,116,0.35)" stroke-width="0.8" />
+              <circle cx="150" cy="15" r="6" fill="none" stroke="rgba(188,163,116,0.55)" stroke-width="1" />
+              <circle cx="150" cy="15" r="2" fill="rgba(188,163,116,0.45)" />
+              <line x1="180" y1="15" x2="300" y2="15" stroke="rgba(188,163,116,0.35)" stroke-width="0.8" />
+            </svg>
+          </div>
+
+          <h1 class="footer-names">خديجة &amp; أنس</h1>
+          <p class="footer-arabic">يتشرّفنا حضوركم يوم الجمعة 23 أكتوبر 2026 بأفراح سوس — أكادير</p>
+          <p class="footer-text">
+            بكل حب وفرح وامتنان، سنكون سعداء بمشاركتكم هذه اللحظة الغالية.
+          </p>
+
+          <div class="footer-ornament footer-ornament-bottom" aria-hidden="true">
+            <svg viewBox="0 0 300 30" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0" y1="15" x2="120" y2="15" stroke="rgba(188,163,116,0.35)" stroke-width="0.8" />
+              <circle cx="150" cy="15" r="6" fill="none" stroke="rgba(188,163,116,0.55)" stroke-width="1" />
+              <circle cx="150" cy="15" r="2" fill="rgba(188,163,116,0.45)" />
+              <line x1="180" y1="15" x2="300" y2="15" stroke="rgba(188,163,116,0.35)" stroke-width="0.8" />
+            </svg>
+          </div>
+
+        <p class="footer-copy">© 2027 Royal Digital Invite — Tous droits réservés</p>
+        </div>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
