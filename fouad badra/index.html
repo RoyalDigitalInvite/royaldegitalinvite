@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Wedding of Fouad Ould Bouna &amp; Badra Bouchanna</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Amiri:wght@400;700&family=Great+Vibes&family=Italiana&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="intro-active">
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- BOUTON MUSIQUE (en bas à droite, visible après l'intro) -->
+  <button id="musicToggle" class="music-toggle" type="button" aria-label="Play or pause the music"
+    aria-pressed="false">
+    <i id="musicIcon" class="fa-solid fa-play"></i>
+  </button>
+
+  <!-- FLOATING LOGO -->
+  <div id="floatingLogo" class="floating-logo" aria-hidden="true">
+    <img src="assets/RoyalDigitalInvite.svg" alt="Royal Digital Invite">
+  </div>
+
+  <!-- INTRO / HERO -->
+  <section id="scene1" class="intro-screen" aria-label="Invitation opening">
+
+    <!-- FINAL IMAGE -->
+    <img id="videoEndFrame" class="video-end-frame" src="assets/image2.png"
+      alt="Wedding decor for Fouad Ould Bouna and Badra Bouchanna">
+
+    <!-- ENVELOPE -->
+    <div id="introTrigger" class="intro-trigger" role="button" tabindex="0" aria-label="Open the invitation">
+      <img src="assets/enveloppe.png" alt="Wedding invitation of Fouad Ould Bouna and Badra Bouchanna"
+        class="intro-cover">
+    </div>
+
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main id="scene2" class="hidden main-content">
+
+    <!-- NAMES / HERO -->
+    <section class="section section-light hero-section">
+      <div class="container center narrow">
+        <p class="hero-label reveal-up">The Wedding of</p>
+        <h1 class="hero-names reveal-up">Fouad Ould Bouna &amp; Badra Bouchanna</h1>
+        <p class="hero-arabic reveal-up ar" dir="rtl" lang="ar">حفل زفاف فواد ولد بونا و بدرة بوشنة</p>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN + DATE + VENUE -->
+    <section id="countdownSection" class="section section-light section-tight-top">
+      <div class="container center narrow">
+
+        <div class="ornament reveal-up">
+          <span class="ornament-line"></span>
+          <i class="fa-solid fa-heart"></i>
+          <span class="ornament-line"></span>
+        </div>
+
+        <div class="section-head reveal-up">
+          <p class="section-label">Our Special Day</p>
+          <h2 class="section-title">The Countdown Has Begun</h2>
+          <p class="section-arabic ar" dir="rtl" lang="ar">بدأ العد التنازلي</p>
+          <p class="section-text">
+            Every passing day brings us closer to a celebration filled with love,
+            joy, and unforgettable memories.
+          </p>
+          <p class="section-text ar" dir="rtl" lang="ar">
+            كل يوم يمرّ يقرّبنا من حفل مليء بالمحبة والفرح والذكريات التي لا تُنسى.
+          </p>
+        </div>
+
+     
+
+        <div class="info-strip reveal-up">
+          <div class="info-item">
+            <i class="fa-regular fa-calendar"></i>
+            <span class="info-label">Date</span>
+            <strong>10-11-12 December 2026</strong>
+            <span class="ar" dir="rtl" lang="ar">10-11-12  ديسمبر 2026</span>
+          </div>
+
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="info-label">Venue</span>
+            <strong>Casablanca</strong>
+            <span class="ar" dir="rtl" lang="ar">الدار البيضاء</span>
+          </div>
+        </div>
+
+        <div class="countdown">
+          <div class="count-box reveal-up">
+            <span id="days">00</span>
+            <small>Days</small>
+            <small class="small-ar ar" dir="rtl" lang="ar">أيام</small>
+          </div>
+          <div class="count-box reveal-up">
+            <span id="hours">00</span>
+            <small>Hours</small>
+            <small class="small-ar ar" dir="rtl" lang="ar">ساعات</small>
+          </div>
+          <div class="count-box reveal-up">
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+            <small class="small-ar ar" dir="rtl" lang="ar">دقائق</small>
+          </div>
+          <div class="count-box reveal-up">
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+            <small class="small-ar ar" dir="rtl" lang="ar">ثوانٍ</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NO PHOTOGRAPHY -->
+    <section class="section section-dark section-with-banner">
+      <div class="full-banner reveal-zoom">
+        <img src="assets/image4.png" alt="Elegant wedding celebration" class="section-banner-image">
+      </div>
+
+      <div class="container center narrow">
+        <div class="ornament ornament-light reveal-up">
+          <span class="ornament-line"></span>
+          <i class="fa-solid fa-camera"></i>
+          <span class="ornament-line"></span>
+        </div>
+
+        <div class="section-head reveal-up">
+          <p class="section-label light">Please Note</p>
+          <h2 class="section-title light">No Photography</h2>
+          <p class="section-arabic light ar" dir="rtl" lang="ar">ممنوع التصوير</p>
+        </div>
+
+        <article class="card card-dark notice-card reveal-up">
+          <div class="notice-icon" aria-hidden="true">
+            <i class="fa-solid fa-camera"></i>
+          </div>
+
+          <h3>An Unplugged Ceremony</h3>
+
+          <p class="notice-text">
+            We kindly ask our guests to keep cameras and phones away and simply enjoy
+            the moment with us. A professional photographer will capture every memory,
+            and we will be happy to share the photos with you.
+          </p>
+
+          <p class="notice-text ar" dir="rtl" lang="ar">
+            نرجو من ضيوفنا الكرام الامتناع عن التصوير أثناء الحفل والاستمتاع باللحظة معنا.
+            سيتولّى مصوّر محترف توثيق كل لحظة، وسنشارك الصور معكم بكل سرور.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container center narrow reveal-up">
+        <div class="footer-divider"></div>
+
+        <p class="hero-label footer-label">The Wedding of</p>
+        <h1 class="intro-title">Fouad Ould Bouna &amp; Badra Bouchanna</h1>
+        <p class="hero-arabic footer-arabic ar" dir="rtl" lang="ar">فواد ولد بونا و بدرة بوشنة</p>
+
+        <p class="footer-text">
+          With love, joy, and gratitude, we would be honored to celebrate this special moment with you.
+        </p>
+
+        <p class="footer-arabic ar" dir="rtl" lang="ar">
+          بكل محبة وفرح وامتنان، يشرّفنا أن نحتفل معكم هذه اللحظة الاستثنائية.
+        </p>
+
+        <div class="footer-divider footer-divider-bottom"></div>
+
+        <p class="footer-copyright">
+          © 2026 Royal Digital Invite — All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
