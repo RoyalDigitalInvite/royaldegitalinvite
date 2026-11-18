@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitation Mariage | Alyae & Obaid</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Amiri:wght@400;700&family=Great+Vibes&family=Italiana&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="intro-active">
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- FLOATING LOGO -->
+  <div id="floatingLogo" class="floating-logo" aria-hidden="true">
+    <img src="assets/RoyalDigitalInvite.svg" alt="Royal Digital Invite">
+  </div>
+
+  <!-- INTRO / HERO -->
+  <section id="scene1" class="intro-screen invitation-hero" aria-label="Invitation opening">
+
+    <!-- FINAL IMAGE -->
+    <img id="videoEndFrame" class="video-end-frame" src="assets/image2.png" alt="Décor mariage Alyae et Obaid">
+    <!-- ENVELOPE -->
+    <div id="introTrigger" class="intro-trigger" role="button" tabindex="0" aria-label="Ouvrir l’invitation">
+      <img src="assets/enveloppe.png" alt="Invitation mariage Alyae et Obaid" class="intro-cover">
+    </div>
+
+    <!-- HERO TEXT OVERLAY -->
+    <div class="hero-text-overlay">
+      <p class="hero-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</p>
+
+      <p class="hero-welcome-fr">Bienvenue à notre mariage</p>
+      <p class="hero-welcome-ar">يسرّنا دعوتكم لمشاركتنا فرحتنا</p>
+
+      <div class="hero-couple-wrap">
+        <h1 class="hero-name hero-name-left">Alyae</h1>
+        <div class="hero-ampersand">&amp;</div>
+        <h1 class="hero-name hero-name-right">Obaid</h1>
+      </div>
+
+      <div class="hero-event-details">
+        <p class="hero-place">Palais Azouhour (zitana)</p>
+        <p class="hero-city">Chefchaoun</p>
+        <p class="hero-date">20 Décembre 2026</p>
+        <p class="hero-time">18h00</p>
+        <p class="hero-date-ar">السبت 20 غشت 2026 — الساعة 18:00</p>
+      </div>
+    </div>
+
+  </section>
+  <section id="image2ndSection" class="image2nd-section hidden">
+    <img src="assets/image2nd.png" alt="">
+  </section>
+
+
+  <!-- MAIN CONTENT -->
+  <main id="scene2" class="hidden main-content">
+
+    <!-- COUNTDOWN -->
+    <section id="countdownSection" class="section section-light wedding-countdown-section">
+      <div class="container center narrow">
+
+        <div class="ornament reveal-up">
+          <span class="ornament-line"></span>
+          <i class="fa-solid fa-heart"></i>
+          <span class="ornament-line"></span>
+        </div>
+
+        <div class="section-head reveal-up">
+          <p class="section-label">Le grand jour approche</p>
+          <h2 class="section-title">Le compte à rebours a commencé</h2>
+          <p class="section-arabic">اقترب موعد لقائنا في أجمل ليلة</p>
+          <p class="section-text bilingual-text">
+            Nous avons hâte de partager avec vous ce moment rempli d’amour, de joie et d’émotion.<br>
+            <span>نتشوّق لمشاركتكم هذه اللحظة المميزة المليئة بالحب والفرح.</span>
+          </p>
+        </div>
+
+        <div class="event-highlight reveal-up">
+          <div class="event-highlight-icon">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+          <div class="event-highlight-content center">
+            <span class="event-highlight-label">Heure de réception | وقت الاستقبال</span>
+            <strong>18h00</strong>
+            <p>
+              Accueil des invités à partir de 18h00.<br>
+              استقبال الضيوف ابتداءً من الساعة 18:00
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <!-- VENUE + GPS -->
+    <section class="section section-dark section-with-banner wedding-venue-section">
+      <div class="full-banner reveal-zoom">
+        <img src="assets/image3.svg" alt="Lieu de réception" class="section-banner-image">
+      </div>
+
+      <div class="section-head center reveal-up">
+        <div class="ornament ornament-light">
+          <span class="ornament-line"></span>
+          <i class="fa-solid fa-location-dot"></i>
+          <span class="ornament-line"></span>
+        </div>
+        <p class="section-label light">Lieu de réception</p>
+
+        <p class="section-arabic light">قاعة الحفل ومعلومات الوصول</p>
+      </div>
+
+      <div class="container">
+        <div class="cards-grid">
+          <article class="card card-dark reveal-left">
+            <p class="card-subtitle">
+              <i class="fa-solid fa-location-dot"></i> Adresse | العنوان
+            </p>
+            <h3>Palais Azouhour (zitana)</h3>
+            <p class="card-line">
+              <i class="fa-solid fa-city"></i>
+              Chefchaoun, Maroc
+            </p>
+            <p class="card-line">
+              <i class="fa-solid fa-heart"></i>
+              Un lieu raffiné pour célébrer ensemble
+            </p>
+
+          </article>
+
+          <article class="card card-dark reveal-right">
+            <p class="card-subtitle">
+              <i class="fa-solid fa-map"></i> Navigation | الاتجاهات
+            </p>
+            <h3>Google Maps</h3>
+            <p class="card-line">
+              <i class="fa-solid fa-route"></i>
+              Ouvrir l’itinéraire
+            </p>
+            <a class="text-link" href="https://maps.app.goo.gl/QyVmnU6EqdgtSWe67" target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              Ouvrir la localisation
+            </a>
+          </article>
+        </div>
+
+        <div class="map-box reveal-up">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3167.682062010615!2d-5.2772208!3d35.179086000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b27927c4e9b05%3A0xd2144d440aef582!2z2YXZgtmH2Ykg2YjZgtin2LnYqSDYp9mE2KPZgdix2KfYrSDYp9mE2LLZh9mI2LE!5e1!3m2!1sfr!2sma!4v1795043326339!5m2!1sfr!2sma"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ -->
+    <!--  AUTORISATIONS (Enfants & Photos)  -->
+    <!-- ══════════════════════════════════ -->
+    <section class="section section-dress">
+
+      <!-- IMAGE EN HAUT, directement au début de la section -->
+      <div class="full-banner reveal-zoom" style="margin-bottom: 0 !important;">
+        <img src="assets/image4.svg" alt="Ambiance mariage" class="section-banner-image">
+        <div class="banner-overlay"></div>
+      </div>
+
+      <div class="container">
+        <div class="section-heading reveal-fade">
+          <div class="ornament-royal">
+            <span></span><i class="fa-solid fa-circle-check"></i><span></span>
+          </div>
+          <!-- NOUVEAU : ligne Great Vibes -->
+          <p class="section-vibes">Partagez chaque instant avec nous</p>
+          <p class="section-khat" dir="rtl">معلومات مهمة لضيوفنا الكرام</p>
+          <h2 class="section-titre">Informations</h2>
+          <p class="section-sous">Quelques informations importantes pour partager ce moment unique en toute sérénité.
+          </p>
+        </div>
+
+        <div class="dress-grid">
+          <article class="dress-card reveal-left">
+            <div class="dress-card-top">
+              <div class="dress-icon-wrap"><i class="fa-solid fa-child-reaching"></i></div>
+              <span class="dress-tag">Avec nos remerciements</span>
+            </div>
+            <h3>Nos Petits Anges</h3>
+            <p>Afin que chacun puisse profiter pleinement de cette soirée exceptionnelle,
+              nous vous invitons à venir sans les enfants.
+              Nous vous remercions sincèrement pour votre compréhension et votre bienveillance.</p>
+            <p dir="rtl" style="margin-top:10px;font-weight:600;"> جنة الأطفال منازلهم
+              بكل محبة وتقدير، نأمل من ضيوفنا الكرام مشاركتنا هذه المناسبة السعيدة دون اصطحاب الأطفال، شاكرين لكم حسن
+              تفهمكم وتعاونكم.</p>
+            <div class="dress-motif" aria-hidden="true">✦</div>
+          </article>
+
+          <article class="dress-card reveal-right">
+            <div class="dress-card-top">
+              <div class="dress-icon-wrap"><i class="fa-solid fa-camera-retro"></i></div>
+              <span class="dress-tag">Moment privilégié</span>
+            </div>
+            <h3>Cérémonie sans photos</h3>
+            <p> Afin de préserver l'intimité de cette célébration et permettre à chacun de profiter pleinement de chaque
+              instant, nous vous remercions de ne pas prendre de photos ni de vidéos durant l'événement. </p>
+            <p dir="rtl" style="margin-top:10px;font-weight:600;"> حفاظاً على خصوصية هذه المناسبة الجميلة، نرجو منكم
+              التكرم بعدم التصوير أو تسجيل الفيديو أثناء الحفل. شكراً لتفهمكم. </p>
+            <div class="dress-motif" aria-hidden="true">✦</div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container center narrow reveal-up">
+        <div class="footer-divider"></div>
+
+        <h1 class="intro-title">Alyae &amp; Obaid</h1>
+
+        <p class="footer-text">
+          Avec amour et bonheur, nous serions honorés de partager cette soirée avec vous.
+        </p>
+
+        <p class="footer-arabic">
+          حضوركم يسعدنا ويزيد ليلتنا جمالاً
+        </p>
+
+        <div class="footer-divider footer-divider-bottom"></div>
+
+        <p class="footer-copyright">
+          © 2026 Royal Digital Invite — Tous droits réservés.
+        </p>
+      </div>
+    </footer>
+
+    <button id="musicToggle" class="music-toggle" aria-label="Pause ou lecture de la musique">
+      <i class="fa-solid fa-pause"></i>
+    </button>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
